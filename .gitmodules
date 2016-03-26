@@ -1,0 +1,3 @@
+[submodule "src/Engine"]
+	path = src/Engine
+	url = git@github.com:latentcodex/engine.git
