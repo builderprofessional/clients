@@ -1,0 +1,31 @@
+@background-color: #fdfdfd;
+@header-bg-color: #3d3d3d;
+@button-bg-color: #ede3d4;
+@button-color: #FFFFFF;
+@header-text-color:@background-color;
+@color-primary: #3c1b05;
+@color-secondary: #1d295b;
+@accent-color: #ae8549;
+@grid-row-primary: #f4f0ea;
+@grid-row-secondary: #eaedf1;
+@warning-color:@label-warning-bg;
+@danger-color:@label-danger-bg;
+@info-color:@label-info-bg;
+@warning-bg-color:@alert-warning-bg;
+@danger-bg-color:@alert-danger-bg;
+@info-bg-color:@alert-info-bg;
+
+@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+
+@font-size-base:          14px;
+
+
+// some mixins
+
+.highlight-gradient(@color:@info-color,@ang:45deg) {
+  background: linear-gradient(45deg, darken(@color,5%) 0%,lighten(@color,10%) 62%,darken(@color,5%) 100%);
+}

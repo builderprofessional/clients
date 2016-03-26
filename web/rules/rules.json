@@ -1,0 +1,118 @@
+{
+  "user": {
+      "Login": ["required"],
+      "FirstName": ["required"],
+      "LastName": ["required"],
+      "Password": {
+          "0": "required",
+          "equals": {
+              "otherField": "PasswordConfirm",
+              "errorMessage": "Passwords must match."
+          },
+          "minMax": {
+              "0": 10,
+              "1": 0,
+              "errorMessage": "Minimum password length is 10 characters"
+          },
+          "regex": {
+              "0": "/(?=.*[a-z])(?=.*[0-9])(?=.*[[:punct:]])(?=.*[A-Z])/",
+              "errorMessage": "Password must contain at least one upper and one lower case letter, one number, and one punctuation mark."
+          }
+      },
+      "PasswordConfirm": {
+          "equals": {
+              "otherField": "Password",
+              "errorMessage": "Passwords must match."
+          }
+      }
+  },
+  "signup": {
+    "Name": ["required"],
+    "Email": ["required", "email"],
+    "Password": {
+      "0": "required",
+      "equals": {
+        "otherField": "PasswordConfirm",
+        "errorMessage": "Passwords must match."
+      },
+      "minMax": {
+        "0": 10,
+        "1": 0,
+        "errorMessage": "Minimum password length is 10 characters"
+      },
+      "regex": {
+        "0": "/(?=.*[a-z])(?=.*[0-9])(?=.*[[:punct:]])(?=.*[A-Z])/",
+        "errorMessage": "Password must contain at least one upper and one lower case letter, one number, and one punctuation mark."
+      }
+    },
+    "PasswordConfirm": {
+      "equals": {
+        "otherField": "Password",
+        "errorMessage": "Passwords must match."
+      }
+    }
+  },
+  "completeSignup": {
+    "CompanyName": ["required"],
+    "ProductId": ["required", "integer"],
+    "FirstName": ["required"],
+    "LastName": ["required"],
+    "Email": ["required", "email"],
+    "Address": ["required"],
+    "City": ["required"],
+    "State": ["required"],
+    "ZipCode": ["required"],
+    "Country": {"0": "required", "regex": {"0": "/[A-Z]{2,2}/", "errorMessage": "Must use a valid 2 character country code"}},
+    "SignupId": ["required", "integer"],
+    "CreditCardNumber": {"0":"required","minMax":{"0":16,"1":16,"errorMessage":"Must be a 16 digit credit card number"}},
+    "CVV": ["required"],
+    "ExpirationYear": {"0":"required","minMax":{"0":4,"1":4,"errorMessage":"Must be a 4 digit year (e.g. 2015)"}},
+    "ExpirationMonth": {"0":"required","minMax":{"0":2,"1":2,"errorMessage":"Must be a 2 digit month (e.g. 04 for april)"}}
+  },
+  "getAdhocTax": {
+    "Amount": ["required", "integer"],
+    "City": ["required"],
+    "State": {"0": "required", "minMax": {"0": 2, "1": 2, "errorMessage": "Must be a 2 character state abbreviation"}},
+    "ZipCode": ["required"],
+    "Country": {"0": "required", "regex": {"0": "/[A-Z]{2,2}/", "errorMessage": "Must use a valid 2 character country code"}}
+  },
+  "company": {
+    "Name": {"0":"required"}
+  },
+  "employee": {
+    "JobTitle":{"minMax":{"0":1,"1":36,"errorMessage":"We really need a job title of 36 characters or less."}}
+  },
+  "address": {
+    "Address": {"0":"required"},
+    "City": {"0":"required"}
+  },
+  "phone": {
+    "Number": {"0":"required"},
+    "PhoneTypeId": {"required":{"errorMessage": "Phone must have a type"}}
+  },
+  "email": {
+    "Email": {"0":"required"}
+  },
+  "person": {
+    "FirstName": ["required"],
+    "LastName": ["required"]
+  },
+  "braintree": {
+    "CreditCardNumber": {"0":"required","minMax":{"0":16,"1":16,"errorMessage":"Must be a 16 digit credit card number"}},
+    "CVV": ["required"],
+    "ZipCode": ["required"],
+    "ExpirationYear": {"0":"required","minMax":{"0":4,"1":4,"errorMessage":"Must be a 4 digit year (e.g. 2015)"}},
+    "ExpirationMonth": {"0":"required","minMax":{"0":2,"1":2,"errorMessage":"Must be a 2 digit month (e.g. 04 for april)"}}
+  },
+  "mainitem": {
+    "Code": ["required","integer"],
+    "Name": {"0":"required","minMax":{"0":0,"1":255,"errorMessage":"Must be between 1 and 255 characters"}}
+  },
+  "detailitem": {
+    "Name": {"0":"required","minMax":{"0":0,"1":255,"errorMessage":"Must be between 1 and 255 characters"}},
+    "Cost": {"0":"required","integer":{"errorMessage":"Must be a valid price."},"regex":{"0":"/0$/","errorMessage":"Must not have more than 3 digits after the decimal place."}}
+  },
+  "estimate": {
+    "StartDate": {"0":"required","1":"date"}
+  }
+}

@@ -1,0 +1,14 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: bptraining
+    database_user: bptraining
+    database_password: bptraining
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: c03d264b3ce304b55653878ae3fa1c4be3edd0cc
+    locale: en

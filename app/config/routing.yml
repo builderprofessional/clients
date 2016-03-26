@@ -1,0 +1,17 @@
+app_homepage:
+  path: /
+  defaults: { _controller: TrainingTrainingBundle:Default:index }
+app_signup:
+  path: /signup
+  defaults: { _controller: TrainingTrainingBundle:Default:signup }
+
+propelsoa:
+  resource: "@PropelSOABundle/Resources/config/routing.yml"
+  prefix: /public
+
+training_training:
+    resource: "@TrainingTrainingBundle/Resources/config/routing.yml"
+    prefix:   /training
+public_training_training:
+    resource: "@TrainingTrainingBundle/Resources/config/publicrouting.yml"
+    prefix:   /public/training

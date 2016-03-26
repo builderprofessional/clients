@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ $1 ]]; then
+	/usr/bin/php ./vendor/phpunit/phpunit/phpunit -c ./app/phpunit.xml --group $1
+else
+	/usr/bin/php ./vendor/phpunit/phpunit/phpunit -c ./app/phpunit.xml
+fi
+
+
