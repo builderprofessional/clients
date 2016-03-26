@@ -4,9 +4,9 @@
 parameters:
     database_host:     127.0.0.1
     database_port:     ~
-    database_name:     bptraining
-    database_user:     bptraining
-    database_password: bptraining
+    database_name:     turnkey
+    database_user:     turnkey
+    database_password: turnkey
     # You should uncomment this if you want use pdo_sqlite
     # database_path: "%kernel.root_dir%/data.db3"
 

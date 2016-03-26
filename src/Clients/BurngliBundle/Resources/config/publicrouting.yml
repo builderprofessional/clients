@@ -1,0 +1,3 @@
+clients_burngli_homepage:
+    path:     /
+    defaults: { _controller: ClientsBurngliBundle:Default:index }

@@ -8,7 +8,7 @@ module.exports = function(grunt) {
   var appDir = 'web/app';
   var vendorDir = appDir + '/vendor';
   var tmpDir = appDir + '/tmp';
-  var appName = 'training';
+  var appName = 'turnKey';
 
   //matchers
   var matchers = {
@@ -296,7 +296,8 @@ module.exports = function(grunt) {
       files: [appDir+'/**/*.js', '!'+vendorDir+'/**'],
       options: {
         sub: true,
-        laxcomma: true
+        laxcomma: true,
+        loopfunc: true
       }
     },
     less: {

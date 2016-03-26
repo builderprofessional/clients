@@ -1,17 +1,65 @@
 app_homepage:
   path: /
-  defaults: { _controller: TrainingTrainingBundle:Default:index }
-app_signup:
-  path: /signup
-  defaults: { _controller: TrainingTrainingBundle:Default:signup }
+  defaults: { _controller: ClientsBurngliBundle:Default:index }
+
 
 propelsoa:
   resource: "@PropelSOABundle/Resources/config/routing.yml"
   prefix: /public
 
-training_training:
-    resource: "@TrainingTrainingBundle/Resources/config/routing.yml"
-    prefix:   /training
-public_training_training:
-    resource: "@TrainingTrainingBundle/Resources/config/publicrouting.yml"
-    prefix:   /public/training
+clients_clients:
+    resource: "@ClientsBurngliBundle/Resources/config/routing.yml"
+    prefix:   /burghli
+public_clients_clients:
+    resource: "@ClientsBurngliBundle/Resources/config/publicrouting.yml"
+    prefix:   /public/burghli
+
+
+auth:
+  resource: "@EngineAuthBundle/Resources/config/routing.yml"
+  prefix:   /auth
+publicauth:
+  resource: "@EngineAuthBundle/Resources/config/publicrouting.yml"
+  prefix:   /public/auth
+
+report:
+  resource: "@EngineReportBundle/Resources/config/routing.yml"
+  prefix:   /report
+publicreport:
+  resource: "@EngineReportBundle/Resources/config/publicrouting.yml"
+  prefix:   /public/report
+
+demographic:
+  resource: "@EngineDemographicBundle/Resources/config/routing.yml"
+  prefix:   /demo
+publicdemographic:
+  resource: "@EngineDemographicBundle/Resources/config/publicrouting.yml"
+  prefix:   /public/demo
+
+framework:
+  resource: "@EngineBundle/Resources/config/routing.yml"
+  prefix:   /framework
+publicframework:
+  resource: "@EngineBundle/Resources/config/publicrouting.yml"
+  prefix:   /public/framework
+
+billing:
+  resource: "@EngineBillingBundle/Resources/config/routing.yml"
+  prefix:   /billing
+publicbilling:
+  resource: "@EngineBillingBundle/Resources/config/publicrouting.yml"
+  prefix:   /public/billing
+
+media:
+  resource: "@EngineMediaBundle/Resources/config/routing.yml"
+  prefix:   /media
+publicmedia:
+  resource: "@EngineMediaBundle/Resources/config/publicrouting.yml"
+  prefix:   /public/media
+
+support:
+  resource: "@EngineSupportBundle/Resources/config/routing.yml"
+  prefix:   /support
+publicmedia:
+  resource: "@EngineSupportBundle/Resources/config/publicrouting.yml"
+  prefix:   /public/support

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta chareset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>Burghli Homes</title>
+  {#<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">#}
+  <link rel="stylesheet" type="text/css" href="/css/kernel.css" />
+  {#<link rel="icon" type="image/png" href="/images/houseicon.png" />#}
+
+  <base href="{{ app.request.getBaseUrl() }}">
+
+
+  <script>
+    //optional need to be loaded before kernel for file uploads to work on older browsers
+    FileAPI = {
+      jsPath: '/FileAPI/FileAPI.min.js',
+      staticPath: '/FileAPI/FileAPI.flash.swf',
+    }
+  </script>
+</head>
+<body class="eng-auth-application waiting-for-angular">
+<div id="initializing-panel">
+  <div class="waiting-loader"></div>
+</div>
+<eng-alerts class="all-alerts"></eng-alerts>
+<!--
+<div class="all-alerts">
+  <eng-alert-box alert-type="error"></eng-alert-box>
+  <eng-alert-box alert-type="fielderror"></eng-alert-box>
+  <eng-alert-box alert-type="warning"></eng-alert-box>
+  <eng-alert-box alert-type="success"></eng-alert-box>
+  <eng-alert-box alert-type="info"></eng-alert-box>
+</div>
+-->
+<eng-view-overline></eng-view-overline>
+<eng-view-navbar></eng-view-navbar>
+
+
+<!--Main Content-->
+<div id="content" class="container" ui-view="content"></div>
+
+
+<!-- Include all javascript at bottom of body per best practices for performance -->
+<script src="//js.braintreegateway.com/v1/braintree.js"></script>
+<script src="//vjs.zencdn.net/5.4.4/video.js"></script>
+<script src="kernel.js"></script>
+<script>
+  launchPropelSOA(engApp, true, domain, null, true);
+  launchPropelSOA(turnKeyApp, true, domain, null, true);
+</script>
+</body>
+</html>

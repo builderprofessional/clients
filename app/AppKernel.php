@@ -18,13 +18,14 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Propel\PropelBundle\PropelBundle(),
             new ThirdEngine\PropelSOABundle\PropelSOABundle(),
-            new Training\TrainingBundle\TrainingTrainingBundle(),
             new Engine\AuthBundle\EngineAuthBundle(),
             new Engine\BillingBundle\EngineBillingBundle(),
             new Engine\DemographicBundle\EngineDemographicBundle(),
             new Engine\EngineBundle\EngineBundle(),
             new Engine\MediaBundle\EngineMediaBundle(),
             new Engine\ReportBundle\EngineReportBundle(),
+            new Engine\SupportBundle\EngineSupportBundle(),
+            new Clients\BurngliBundle\ClientsBurngliBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

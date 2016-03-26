@@ -1,13 +1,13 @@
 // define our angular app that encompasses all of our pages and inject all
 // module dependencies
-trainingApp = angular.module('TrainingApp', ['engApp', 'engAuth', 'ngAnimate', 'engState', 'mgcrea.ngStrap', 'LocalStorageModule']);
+turnKeyApp = angular.module('TurnKeyApp', ['engApp', 'engAuth', 'ngAnimate', 'engState', 'mgcrea.ngStrap', 'LocalStorageModule']);
 engApp.constant('APP_CONFIG',{
   App: {
-    Name: "Builder Professional Training"
+    Name: "BurghliHomes.com"
   }
 });
 //configure routing defaults
-trainingApp.config(function ($locationProvider, $urlRouterProvider, $httpProvider)
+turnKeyApp.config(function ($locationProvider, $urlRouterProvider, $httpProvider)
 {
     $httpProvider.defaults.headers.common['Cache-Control'] = 'no-cache';
     $urlRouterProvider.otherwise('/dashboard');
@@ -19,7 +19,7 @@ trainingApp.config(function ($locationProvider, $urlRouterProvider, $httpProvide
 
 
 //configure datepicker defaults
-trainingApp.config(function($datepickerProvider) {
+turnKeyApp.config(function($datepickerProvider) {
   angular.extend($datepickerProvider.defaults, {
     dateFormat: 'MM/dd/yyyy',
     startWeek: 1,
@@ -28,7 +28,7 @@ trainingApp.config(function($datepickerProvider) {
 });
 
 //configure modal/aside defaults
-trainingApp.config(function($asideProvider){
+turnKeyApp.config(function($asideProvider){
   angular.extend($asideProvider.defaults,
      {
        template: '/app/engine/engApp/components/elements/aside/eng-aside.html',
@@ -40,5 +40,5 @@ trainingApp.config(function($asideProvider){
 //bootstrap the app when the page is done loading
 angular.element(document).ready(function ()
 {
-    angular.bootstrap(document.body, ['TrainingApp']);
+    angular.bootstrap(document.body, ['TurnKeyApp']);
 });

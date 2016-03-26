@@ -7,26 +7,26 @@ environments:
     production:
         adapter: mysql
         host: localhost
-        name: bptraining
-        user: bptraining
-        pass: bptraining
+        name: turnkey
+        user: turnkey
+        pass: turnkey
         port: 3306
         charset: utf8
 
     development:
         adapter: mysql
         host: localhost
-        name: bptraining
-        user: bptraining
-        pass: bptraining
+        name: turnkey
+        user: turnkey
+        pass: turnkey
         port: 3306
         charset: utf8
 
     testing:
         adapter: mysql
         host: localhost
-        name: bptraining
-        user: bptraining
-        pass: bptraining
+        name: turnkey
+        user: turnkey
+        pass: turnkey
         port: 3306
         charset: utf8
