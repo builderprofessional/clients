@@ -46,6 +46,17 @@
 <script src="//vjs.zencdn.net/5.4.4/video.js"></script>
 <script src="kernel.js"></script>
 <script>
+
+  turnKeyApp.config(['engStateProvider', 'tkMenuProvider', function (state, tkMenu)
+  {
+    tkMenu.buildMenu(state, 'main');
+
+    tkMenu.addTopLevelMenuItem('home', 'engViewDashboard', 'Home', '/home');
+
+    tkMenu.addTopLevelMenuItem('aboutus', null, 'About Us', null);
+    tkMenu.addChildMenuItem('story', 'tkViewStory', 'Our Story', '/story');
+  }]);
+
   launchPropelSOA(engApp, true, domain, null, true);
   launchPropelSOA(turnKeyApp, true, domain, null, true);
 </script>
