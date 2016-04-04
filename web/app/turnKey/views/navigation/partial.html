@@ -1,0 +1,57 @@
+<!--Header-->
+<div class="navbar navbar-fixed-top navbar-border navbar-inverse navbar-overline">
+  <div class="container">
+    <div class="navbar-header">
+      <span class="navbar-calltoaction">Call Now: (713) 691 - 3948</span>
+      <ng-include src="'/app/engine/engApp/views/navigation/templates/collapsedMenuButton.html'"></ng-include>
+      <a class="navbar-brand my-navbar-brand" ng-href="{{config.App.LogoUrl}}">
+        <div class="logo-pre-div"></div>
+        <img class="logo-image" src="/images/burghli/logo.png">
+      </a>
+    </div>
+  </div>
+</div>
+<div class="navbar navbar-fixed-top primary-nav navbar-border navbar-inverse">
+  <div class="container">
+    <div class="navbar-collapse nav-collapse collapse">
+      <eng-menu data-menu-name="main" class="nav navbar-nav"></eng-menu>
+      <!-- at some point we should have some kind of search
+      <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon-search glyphicon"></span></a>
+              <ul class="dropdown-menu">
+                 <form class="navbar-form" role="search">
+                     <div class="form-group">
+                         <input type="text" class="form-control" placeholder="Search does not work">
+                     </div>
+                 </form>
+              </ul>
+          </li>
+      </ul>
+      -->
+      <!--<ul class="nav navbar-nav navbar-right" ng-if="authLabel == 'Login'">-->
+      <!--<li class="auth-link"><a ng-click="auth()"><span class="menu-link-label">{{authLabel}}</span></a></li>-->
+      <!--</ul>-->
+      <ul class="long-process-indicator" ng-if="processLength">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">
+            <span class="icon icon-running-process" ng-if="processAvg != 100"></span><span class="icon icon-finished-process" ng-if="processAvg == 100"></span><span class="process-status">{{processAvg}}%</span>
+          </a>
+          <ul class="dropdown-menu process-list">
+            <li ng-repeat="process in processes" class="process {{process.result.code}}">
+              <span class="process-label">
+              {{process.result.label || process.result.code}}
+              </span>
+              <div class="progress">
+                <div class="progress-bar" ng-class="{'progress-bar-danger':processAvg == 100 && process.result.errors && process.result.errors.length,'progress-bar-success':processAvg == 100 && !process.result.errors,'progress-bar-striped active':processAvg != 100,'progress-bar-info':processAvg != 100}" role="progressbar" aria-valuenow="{{process.result.progress}}" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width:{{process.result.progress}}%;">
+                  {{process.result.progress}}%
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</div>

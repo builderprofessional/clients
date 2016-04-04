@@ -8,19 +8,52 @@
 /* our less files */
 @import "marketing";
 
+/* pull in less files specific to this project */
+@import "turnKey/turnKey";
+
 /* Global Styles */
 .hidden {
   display: none;
 }
 
 body {
-  padding-top: 75px;
   background-color: @background-color;
   color:@color-primary;
+
+  font-family: "museo-sans";
 }
 // Header stuff
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
   color:@color-secondary;
+}
+
+.btn-default {
+  background-color: @burghli-green;
+  border: solid @burghli-green 1px;
+  width: 300px;
+
+  font-size: 1.1em;
+  color: white;
+}
+
+.record-actions {
+  margin-top: 15px;
+}
+
+.page-title-row {
+  .container();
+  text-align: center;
+  margin-bottom: 20px;
+
+  h1 {
+    color: @burghli-green;
+    font-size: 3em;
+    text-transform: uppercase;
+
+    width: 50%;
+    margin: auto;
+    border-bottom: solid @burghli-yellow 2px;
+  }
 }
 
 h1,.h1 {
@@ -95,4 +128,8 @@ a {
 
 th {
   font-weight: normal;
+}
+
+.navbar-menucontainer {
+  margin-top: 100px;
 }

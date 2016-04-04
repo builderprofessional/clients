@@ -33,19 +33,25 @@
   <eng-alert-box alert-type="info"></eng-alert-box>
 </div>
 -->
-<eng-view-overline></eng-view-overline>
-<eng-view-navbar></eng-view-navbar>
-
+<tk-view-navbar></tk-view-navbar>
 
 <!--Main Content-->
 <div id="content" class="container" ui-view="content"></div>
 
+<tk-view-footer></tk-view-footer>
 
 <!-- Include all javascript at bottom of body per best practices for performance -->
 <script src="//js.braintreegateway.com/v1/braintree.js"></script>
 <script src="//vjs.zencdn.net/5.4.4/video.js"></script>
-<script src="kernel.js"></script>
+
+<!-- Include our fonts dynamically, what stupid bullshit. -->
+<script src="https://use.typekit.net/yrs5bdv.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+<script src="/kernel.js"></script>
 <script>
+
+
 
   turnKeyApp.config(['engStateProvider', 'tkMenuProvider', function (state, tkMenu)
   {
@@ -53,8 +59,23 @@
 
     tkMenu.addTopLevelMenuItem('home', 'engViewDashboard', 'Home', '/home');
 
-    tkMenu.addTopLevelMenuItem('aboutus', null, 'About Us', null);
+    tkMenu.addTopLevelMenuItem('aboutus', 'tkViewStory', 'About Us', '/story');
     tkMenu.addChildMenuItem('story', 'tkViewStory', 'Our Story', '/story');
+    tkMenu.addChildMenuItem('testimonials', 'tkViewTestimonials', 'Testimonials', '/testimonials');
+
+    tkMenu.addTopLevelMenuItem('findahome', 'tkViewCommunities', 'Find a Home', '/communities');
+    tkMenu.addChildMenuItem('communities', 'tkViewCommunities', 'Communities', '/communities');
+    tkMenu.addChildMenuItem('availablehomes', 'tkViewAvailableHomes', 'Available Homes', '/availablehomes');
+    tkMenu.addChildMenuItem('collections', 'tkViewCollections', 'Collections', '/collections');
+
+    tkMenu.addTopLevelMenuItem('programs', 'tkViewDownPayment', 'Programs', '/downpayment');
+    tkMenu.addChildMenuItem('downpayment', 'tkViewDownPayment', 'Down Payment Assistance', '/downpayment');
+    tkMenu.addChildMenuItem('solar', 'tkViewSolar', 'Solar Homes', '/solar');
+
+    tkMenu.addTopLevelMenuItem('gallery', 'tkViewGallery', 'Gallery', '/gallery');
+    tkMenu.addTopLevelMenuItem('faq', 'tkViewFAQ', 'FAQ', '/faq');
+    tkMenu.addTopLevelMenuItem('process', 'tkViewBuildProcess', 'Build Process', '/process');
+    tkMenu.addTopLevelMenuItem('contact', 'tkViewContact', 'Contact', '/contact');
   }]);
 
   launchPropelSOA(engApp, true, domain, null, true);

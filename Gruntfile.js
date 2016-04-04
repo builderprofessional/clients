@@ -283,11 +283,11 @@ module.exports = function(grunt) {
       }
     },
     imagemin: {
-      build: {
+      dynamic: {
          files: [{
-          expand: true,          
-          flatten: true,
-          src: ['web/images/**.+('+imageExtenstions+')'],
+          expand: true,
+          cwd: 'web/images',
+          src: ['**/*.{png,jpg,gif}'],
           dest: 'dist/images'
         }]
       }

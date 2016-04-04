@@ -1,0 +1,37 @@
+<div class="contact-page">
+  <div class="page-title-row"><h1>Contact Us</h1></div>
+  <div class="contact-content">
+    <div class="contact-page-info">
+      <span class="company-name">Burghli Homes</span>
+      <span class="division">Administrative Office</span>
+
+      <span class="address1">4615 N. Freeway</span>
+      <span class="city-state-zip">Houston, TX 77022</span>
+      <span class="office-phone">(713) 691-3948 (office)</span>
+      <span class="fax">(713) 692-6063 (fax)</span>
+
+      <span class="division">Customer Service Department</span>
+      <span class="office-phone">(713) 691-3948 (office)</span>
+    </div>
+    <div class="contact-page-form">
+      <h2>We Would Love to Hear from You</h2>
+      <eng-alerts alert-prefix="contactus"></eng-alerts>
+      <form>
+        <eng-field type="text" placeholder="Your Name" validator="validator" ng-model="ContactUs.Name" label="Name" ></eng-field>
+        <eng-field type="text" placeholder="yourname@yourdomain.com" validator="validator" ng-model="ContactUs.Email" label="Email" ></eng-field>
+        <eng-field type="text" placeholder="(xxx) xxx-xxxx" validator="validator" ng-model="ContactUs.Phone" label="Phone" ></eng-field>
+        <eng-field type="text" placeholder="e.g. After 5pm Weekdays OR Anytime on Saturday" validator="validator" ng-model="ContactUs.Time" label="Best Time to Contact You" ></eng-field>
+        <eng-field type="textarea"
+                   placeholder="e.g. Looking for more information about your Turn-Key Website offering" validator="validator"
+                   ng-model="ContactUs.Question" label="Any Question or Comment Before We Contact You?" >
+        </eng-field>
+        <fieldset class="record-actions">
+          <div class="action-buttons">
+            <eng-action-button ng-click="contact()" data-button-text="Submit Request" data-button-action="email"></eng-action-button>
+          </div>
+        </fieldset>
+
+      </form>
+    </div>
+  </div>
+ </div>
