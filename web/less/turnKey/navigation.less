@@ -1,0 +1,84 @@
+.navbar-overline {
+  z-index: 2000;
+  height: 43px;
+
+  & > .container > div.navbar-header {
+    width: 100%;
+  }
+}
+
+.navbar-calltoaction {
+  color: @burghli-yellow;
+  text-transform: uppercase;
+
+  font-family: "museo-sans";
+  font-weight: bold;
+  font-size: 24px;
+
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.navbar-brand {
+  float: right;
+  z-index: 2000;
+}
+
+.primary-nav {
+  background-color: @burghli-green !important;
+  margin-top: 43px;
+
+  clear: both;
+}
+
+.view-main {
+  margin-top: 115px;
+  padding-bottom: 40px;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  background-color: @burghli-yellow;
+
+  .menu-link-label {
+    color: black !important;
+  }
+}
+
+.parent-menu-item {
+  padding-top: 8px;
+
+  border: solid @burghli-green 1px;
+
+  &.active, &.open {
+    background-color: @burghli-green !important;
+
+    border-left: solid @burghli-yellow 1px;
+    border-right: solid @burghli-yellow 1px;
+    border-top: solid @burghli-yellow 1px;
+
+    & > a {
+      background-color: @burghli-green !important;
+    }
+  }
+
+  .sub-menu-item {
+    a:hover {
+      background-color: @burghli-yellow !important;
+      text-decoration:  underline;
+    }
+  }
+
+  .sub-menu-item:not(:last-child) {
+    border-bottom: solid black 2px;
+  }
+
+  .menu-link-label {
+    color: white;
+    text-transform: uppercase;
+    font-size: .8em;
+  }
+}
