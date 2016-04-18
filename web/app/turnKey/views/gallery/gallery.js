@@ -1,7 +1,7 @@
 (function()
 {
-  turnKeyApp.directive("tkViewGallery", dashboard);
-  function dashboard()
+  turnKeyApp.directive("tkViewGallery", viewGallery);
+  function viewGallery()
   {
     return {
       restrict: "A",

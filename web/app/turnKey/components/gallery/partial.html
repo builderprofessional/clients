@@ -1,0 +1,33 @@
+<div class="gallery-container full-width-gallery">
+
+  <div class="container gallery-header">
+    <div class="row">
+      <div class="gallery-category-selector">
+        Look at Photos About &nbsp;&nbsp;&nbsp;
+        <select name="Category" ng-model="selectedCategory">
+          <option ng-repeat="category in categories" value="{{category}}">{{category}}</option>
+        </select>
+      </div>
+
+      <paginate-settings service="galleryPagination"></paginate-settings>
+      <paginate-bar service="galleryPagination" class="pull-right"></paginate-bar>
+    </div>
+  </div>
+
+  <div class="gallery-images washableContainer">
+
+    <div class="gallery-row" ng-repeat="rowIndex in range(rowCount)">
+      <div class="gallery-column" ng-repeat="columnIndex in range(columnCount)">
+
+        <div class="gallery-cell" ng-if="isValidImage(rowIndex, columnIndex)">
+          <div class="gallery-image-wrapper">
+            <a data-toggle="lightbox" href="{{getImageUrl(rowIndex, columnIndex)}}"><img class="washable" ng-src="{{getImageUrl(rowIndex, columnIndex)}}" /></a>
+          </div>
+        </div>
+
+        <div class="gallery-cell-empty" ng-if="!isValidImage(rowIndex, columnIndex)"><span>&nbsp;</span></div>
+
+      </div>
+    </div>
+  </div>
+</div>
