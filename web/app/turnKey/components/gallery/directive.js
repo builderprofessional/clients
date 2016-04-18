@@ -112,21 +112,6 @@ turnKeyApp.directive("tkGallery", function gallery($q)
       {
         return (rowIndex * $scope.columnCount) + columnIndex;
       };
-
-
-      $scope.test = env_url;
-      $scope.range = function (count)
-      {
-        var list = [];
-
-        for (var index = 0; index < count; ++index)
-        {
-          list.push(index);
-        }
-
-        return list;
-      };
-
     }]
   };
 });

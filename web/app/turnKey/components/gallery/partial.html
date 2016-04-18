@@ -1,8 +1,9 @@
 <div class="gallery-container full-width-gallery">
 
-  <div class="container">
+  <div class="container gallery-header">
     <div class="row">
       <div class="gallery-category-selector">
+        Look at Photos About &nbsp;&nbsp;&nbsp;
         <select name="Category" ng-model="selectedCategory">
           <option ng-repeat="category in categories" value="{{category}}">{{category}}</option>
         </select>
@@ -20,7 +21,7 @@
 
         <div class="gallery-cell" ng-if="isValidImage(rowIndex, columnIndex)">
           <div class="gallery-image-wrapper">
-            <img class="washable" ng-src="{{getImageUrl(rowIndex, columnIndex)}}" />
+            <a data-toggle="lightbox" href="{{getImageUrl(rowIndex, columnIndex)}}"><img class="washable" ng-src="{{getImageUrl(rowIndex, columnIndex)}}" /></a>
           </div>
         </div>
 

@@ -33,7 +33,7 @@ class GalleryController extends ServiceController
     for ($i = 1; $i <= 7; ++$i)
     {
       $photos[] = [
-        'category' => 'Exterior',
+        'category' => 'Exteriors',
         'fileName' => 'ext' . $i . '.jpg',
       ];
     }
@@ -41,7 +41,7 @@ class GalleryController extends ServiceController
     for ($i = 1; $i <= 7; ++$i)
     {
       $photos[] = [
-        'category' => 'Exterior',
+        'category' => 'Exteriors',
         'fileName' => 'int' . $i . '.jpg',
       ];
     }
@@ -49,7 +49,7 @@ class GalleryController extends ServiceController
     for ($i = 1; $i <= 7; ++$i)
     {
       $photos[] = [
-        'category' => 'Exterior',
+        'category' => 'Exteriors',
         'fileName' => 'ext' . $i . '.jpg',
       ];
     }
@@ -57,7 +57,7 @@ class GalleryController extends ServiceController
     for ($i = 1; $i <= 7; ++$i)
     {
       $photos[] = [
-        'category' => 'Exterior',
+        'category' => 'Exteriors',
         'fileName' => 'int' . $i . '.jpg',
       ];
     }
