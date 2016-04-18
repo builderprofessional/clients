@@ -1,7 +1,15 @@
+
 app_homepage:
   path: /
   defaults: { _controller: ClientsBurngliBundle:Default:index }
 
+
+clients_turn_key:
+  resource: "@ClientsTurnKeyBundle/Resources/config/routing.yml"
+  prefix:   /turnkey
+public_clients_turn_key:
+  resource: "@ClientsTurnKeyBundle/Resources/config/publicrouting.yml"
+  prefix: /public/turnkey
 
 propelsoa:
   resource: "@PropelSOABundle/Resources/config/routing.yml"

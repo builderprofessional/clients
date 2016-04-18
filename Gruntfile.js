@@ -293,7 +293,10 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: [appDir+'/**/*.js', '!'+vendorDir+'/**'],
+      files: [
+        appDir+'/**/*.js',
+        '!'+vendorDir+'/**'
+      ],
       options: {
         sub: true,
         laxcomma: true,

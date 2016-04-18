@@ -26,6 +26,7 @@ class AppKernel extends Kernel
             new Engine\ReportBundle\EngineReportBundle(),
             new Engine\SupportBundle\EngineSupportBundle(),
             new Clients\BurngliBundle\ClientsBurngliBundle(),
+            new Clients\TurnKeyBundle\ClientsTurnKeyBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

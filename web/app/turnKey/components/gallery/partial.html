@@ -1,0 +1,32 @@
+<div class="gallery-container full-width-gallery">
+
+  <div class="container">
+    <div class="row">
+      <div class="gallery-category-selector">
+        <select name="Category" ng-model="selectedCategory">
+          <option ng-repeat="category in categories" value="{{category}}">{{category}}</option>
+        </select>
+      </div>
+
+      <paginate-settings service="galleryPagination"></paginate-settings>
+      <paginate-bar service="galleryPagination" class="pull-right"></paginate-bar>
+    </div>
+  </div>
+
+  <div class="gallery-images washableContainer">
+
+    <div class="gallery-row" ng-repeat="rowIndex in range(rowCount)">
+      <div class="gallery-column" ng-repeat="columnIndex in range(columnCount)">
+
+        <div class="gallery-cell" ng-if="isValidImage(rowIndex, columnIndex)">
+          <div class="gallery-image-wrapper">
+            <img class="washable" ng-src="{{getImageUrl(rowIndex, columnIndex)}}" />
+          </div>
+        </div>
+
+        <div class="gallery-cell-empty" ng-if="!isValidImage(rowIndex, columnIndex)"><span>&nbsp;</span></div>
+
+      </div>
+    </div>
+  </div>
+</div>

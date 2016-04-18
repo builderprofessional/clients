@@ -1,0 +1,3 @@
+gallery_get:
+  path: /gallery/{key}
+  defaults: { _controller: ClientsTurnKeyBundle:Gallery:images }

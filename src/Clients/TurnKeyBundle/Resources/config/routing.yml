@@ -1,0 +1,3 @@
+clients_turn_key_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ClientsTurnKeyBundle:Default:index }
