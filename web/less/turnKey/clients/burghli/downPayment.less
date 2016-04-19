@@ -1,0 +1,52 @@
+.down-payment-assistance-page {
+  .page-title-row {
+    h1 {
+      font-size: 2.5em;
+
+      @media screen and (max-width: @screen-lg-min) {
+        font-size: 2em;
+      }
+    }
+  }
+}
+
+.down-payment-content {
+  .container();
+
+  .down-payment-row {
+    .row();
+
+    .down-payment-family {
+      .make-xs-column(12);
+      .make-md-column(4);
+
+      text-align: center;
+
+      img {
+        max-width: 400px;
+        max-height: 500px;
+
+        .solidImageFrame();
+
+        @media screen and (max-width: @screen-lg-min) {
+          max-width: 250px;
+          max-height: 350px;
+        }
+      }
+    }
+
+    .down-payment-text {
+      .make-xs-column(12);
+      .make-md-column(8);
+
+      .largeText();
+
+      @media screen and (max-width: @screen-sm-min) {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+
+
