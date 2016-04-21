@@ -1,5 +1,15 @@
 <div class="testimonials-page">
   <div class="page-title-row"><h1>Testimonials</h1></div>
 
-  <div class="process-content">testimonials</div>
+  <div class="testimonials-content">
+    <div class="testimonial-row" ng-repeat="testimonial in testimonials">
+      <div class="testimonial-images">
+        <img ng-src="{{getImageUrl(testimonial.photo1)}}" />
+        <img ng-src="{{getImageUrl(testimonial.photo2)}}" />
+      </div>
+      <div class="testimonial-details">
+        <div class="testimonial-text" ng-bind-html="testimonial.text | engTrustWithHtml"></div>
+      </div>
+    </div>
+  </div>
 </div>

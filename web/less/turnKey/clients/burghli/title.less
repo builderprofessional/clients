@@ -1,0 +1,67 @@
+///////////////////////////////////////////////////////////////////////////////
+// Title Styling
+//
+// Setup which pages and h1 titles need to have special sizing to make
+// sure they stay at one line as long as possible.
+///////////////////////////////////////////////////////////////////////////////
+
+.burghliTitleRow {
+  .container();
+  text-align: center;
+  margin-bottom: 20px;
+
+  h1 {
+    color: @burghli-green;
+    font-size: 3em;
+    text-transform: uppercase;
+
+    width: 50%;
+    margin: auto;
+    border-bottom: solid @burghli-yellow 2px;
+  }
+}
+
+.page-title-row {
+  .burghliTitleRow();
+}
+
+.section-title-row {
+  margin-top: 40px;
+  .burghliTitleRow();
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Long Titles
+//
+// Setup which pages and h1 titles need to have special sizing to make
+// sure they stay at one line as long as possible.
+///////////////////////////////////////////////////////////////////////////////
+
+.burghliLongTitle {
+  h1 {
+    font-size: 2.5em;
+
+    @media screen and (max-width: @screen-lg-min) {
+      font-size: 2em;
+    }
+  }
+}
+
+.burghliVeryLongTitle {
+  h1 {
+    font-size: 2em;
+
+    @media screen and (max-width: @screen-lg-min) {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.down-payment-assistance-page .page-title-row {
+  .burghliLongTitle();
+}
+
+.story-page .section-title-row {
+  .burghliVeryLongTitle();
+}
