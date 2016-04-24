@@ -1,0 +1,18 @@
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="$hide()">&times;</button>
+        <h4 class="modal-title">{{modalTitle}}</h4>
+      </div>
+
+      <div class="modal-body" ng-bind-html="modalBody | engTrustWithHtml"></div>
+
+      <div class="modal-footer actions">
+        <div class="action-buttons modal">
+          <eng-action-button type="button" ng-click="$hide()" data-button-text="Close"></eng-action-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

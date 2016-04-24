@@ -2,6 +2,6 @@
   <div class="profile-image">
     <img ng-src="{{getImageUrl(person.photo)}}" />
   </div>
-  <div class="profile-name">{{person.name}}</div>
+  <div class="profile-name"><a href="javascript: void(0)" ng-click="displayDescription(person)">{{person.name}}</a></div>
   <div class="profile-title">{{person.title}}</div>
 </div>
