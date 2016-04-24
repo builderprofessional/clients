@@ -1,0 +1,43 @@
+.team-members {
+  .container();
+
+  .team-row {
+    .row();
+    margin-top: 20px;
+
+    .profile {
+      .make-xs-column(12);
+      .make-md-column(6);
+      .make-lg-column(3);
+
+      @media screen and (max-width: @screen-lg-min) {
+        margin-top: 20px;
+      }
+
+      .profile-image, .profile-name, .profile-title {
+        width: 100%;
+        text-align: center;
+      }
+
+      .profile-image {
+        img {
+          .solidImageFrame();
+
+          margin-left: auto;
+          margin-right: auto;
+
+          width: 200px;
+          height: 220px;
+        }
+      }
+
+      .profile-name {
+        .burghliLargeText();
+      }
+
+      .profile-title {
+        color: @burghli-green;
+      }
+    }
+  }
+}

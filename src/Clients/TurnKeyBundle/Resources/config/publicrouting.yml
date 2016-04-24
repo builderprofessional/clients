@@ -5,3 +5,7 @@ gallery_get:
 testimonials_get:
   path: /testimonials
   defaults: { _controller: ClientsTurnKeyBundle:Testimonials:get }
+
+team_get:
+  path: /team
+  defaults: { _controller: ClientsTurnKeyBundle:Team:get }
