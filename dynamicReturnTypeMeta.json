@@ -1,0 +1,15 @@
+{
+  "methodCalls": [
+    {
+      "class": "\\ThirdEngine\\Factory\\Factory",
+      "method": "createNewObject",
+      "position": 0
+    },
+    {
+      "class": "\\ThirdEngine\\Factory\\Factory",
+      "method": "createNewQueryObject",
+      "position": 0
+    }
+  ],
+  "functionCalls": []
+}

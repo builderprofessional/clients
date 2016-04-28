@@ -6,7 +6,7 @@ turnKeyApp.directive("tkProfile", function profile()
     transclude: false,
 
     scope: {
-      person: '='
+      teamMember: '='
     },
 
     templateUrl: "/app/turnKey/components/profile/partial.html",
@@ -24,16 +24,15 @@ turnKeyApp.directive("tkProfile", function profile()
         return '/images/burghli/photos/profile/' + photo;
       };
 
-
       /**
        * Display profile description.
        *
        * @param person
        */
-      $scope.displayDescription = function (person)
+      $scope.displayDescription = function (teamMember)
       {
-        $scope.modalTitle = person.name + ' - ' + person.title;
-        $scope.modalBody = person.description;
+        $scope.modalTitle = teamMember.Name + ' - ' + teamMember.JobTitle;
+        $scope.modalBody = teamMember.Description;
 
         $scope.modal = $modal({
           template: '/app/turnKey/components/genericContent/textModal/partial.html',
