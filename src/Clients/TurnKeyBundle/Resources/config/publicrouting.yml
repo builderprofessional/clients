@@ -14,6 +14,14 @@ team_member_get:
   path: /teamMember
   defaults: { _controller: ClientsTurnKeyBundle:TeamMember:get }
 
+faq_get:
+  path: /faq
+  defaults: { _controller: ClientsTurnKeyBundle:Faq:get }
+
+build_process_get:
+  path: /buildProcess
+  defaults: { _controller: ClientsTurnKeyBundle:BuildProcess:get }
+
 team_get:
   path: /team
   defaults: { _controller: ClientsTurnKeyBundle:Team:get }
