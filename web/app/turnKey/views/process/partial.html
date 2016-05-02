@@ -1,5 +1,14 @@
 <div class="process-page">
   <div class="page-title-row"><h1>Build Process</h1></div>
 
-  <div class="process-content">build process</div>
+  <div class="process-step" ng-repeat="step in steps | orderBy: 'StepNumber'">
+    <div class="step-container">
+      <div class="step-number">{{step.StepNumber}}</div>
+      <div class="step-description">
+        <span class="step-number">{{step.StepNumber}}</span>
+        <span class="step-text" ng-bind-html="step.Description | engTrustWithHtml"></span>
+      </div>
+      <div class="step-image">&nbsp;</div>
+    </div>
+  </div>
 </div>

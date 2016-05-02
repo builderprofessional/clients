@@ -38,12 +38,16 @@
               var employee = teamMember.relations.Employee;
               var person = employee.relations.Person;
 
-              memberDisplayData.Name = person.model.FirstName + " " + person.model.LastName;
-              memberDisplayData.JobTitle = employee.model.JobTitle;
-              memberDisplayData.Description = teamMember.model.Description;
-              memberDisplayData.Photo = teamMember.model.ImageFileName;
+              var memberDisplayData = {
+                Name: person.model.FirstName + " " + person.model.LastName,
+                JobTitle: employee.model.JobTitle,
+                Description: teamMember.model.Description,
+                Photo: teamMember.model.ImageFileName,
+                SortOrder: teamMember.model.SortOrder
+              };
 
               $scope.team.push(memberDisplayData);
+              $scope.team.sortByProperty('SortOrder');
             }
           };
 
