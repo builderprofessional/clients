@@ -98,7 +98,7 @@ turnKeyApp.directive("tkGallery", function gallery($q)
         var viewableImages = $scope.getImages();
         var image = viewableImages[imageIndex];
 
-        return "/images/burghli/photos/" + image.fileName;
+        return "/images/burghli/photos/fake/" + image.fileName;
       };
 
 

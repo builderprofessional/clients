@@ -43,7 +43,7 @@
 .gallery-images {
   &:hover {
     .gallery-image-wrapper {
-      border: solid #cccccc 3px;
+      .lightImageFrame();
       transition-duration: .5s;
     }
   }
@@ -84,10 +84,10 @@
     margin-top: 20px;
     margin-bottom: 20px;
 
-    border: inset #666666 3px;
+    .solidImageFrame();
 
     &:hover {
-      border: inset #666666 3px !important;
+      .solidImageFrame();
       transition-duration: .5s;
     }
 

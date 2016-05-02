@@ -1,0 +1,12 @@
+.collapse.am-collapse {
+  animation-timing-function: ease;
+  animation-fill-mode: backwards;
+  overflow: hidden;
+  &.in-remove {
+    display: block;
+  }
+  &.in-add {
+    animation-duration: .5s;
+    animation-name: fadeInDown;
+  }
+}

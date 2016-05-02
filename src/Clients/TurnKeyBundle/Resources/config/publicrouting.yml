@@ -1,3 +1,27 @@
+site_get:
+  path: /site
+  defaults: { _controller: ClientsTurnKeyBundle:Site:get }
+
 gallery_get:
   path: /gallery/{key}
   defaults: { _controller: ClientsTurnKeyBundle:Gallery:images }
+
+testimonials_get:
+  path: /testimonials
+  defaults: { _controller: ClientsTurnKeyBundle:Testimonials:get }
+
+team_member_get:
+  path: /teamMember
+  defaults: { _controller: ClientsTurnKeyBundle:TeamMember:get }
+
+faq_get:
+  path: /faq
+  defaults: { _controller: ClientsTurnKeyBundle:Faq:get }
+
+build_process_get:
+  path: /buildProcess
+  defaults: { _controller: ClientsTurnKeyBundle:BuildProcess:get }
+
+team_get:
+  path: /team
+  defaults: { _controller: ClientsTurnKeyBundle:Team:get }

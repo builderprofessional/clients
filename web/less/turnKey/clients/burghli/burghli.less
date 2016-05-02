@@ -1,0 +1,34 @@
+@burghli-yellow: #f8f600;
+@burghli-green: #1e791c;
+
+@import "downPayment.less";
+@import "testimonials.less";
+@import "team.less";
+@import "title.less";
+@import "solar.less";
+@import "faq.less";
+
+
+.burghliLargeText {
+  color: @burghli-green;
+  font-size: 1.5em;
+  font-family: "museo-sans";
+}
+
+.burghliSmallText {
+  color: @burghli-green;
+  font-size: .9em;
+  font-family: "museo-sans";
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Generic Content
+//
+// Set the basic styles for content that is just text and pictures in common
+// layout configurations.
+///////////////////////////////////////////////////////////////////////////////
+
+.image-then-text-text {
+  .burghliLargeText();
+}

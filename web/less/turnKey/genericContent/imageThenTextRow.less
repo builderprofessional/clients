@@ -1,0 +1,37 @@
+.image-then-text-row-container {
+  // Make this a bootstrap container
+  .container();
+
+  .image-then-text-row {
+    // Make this a bootstrap row
+    .row();
+
+    .image-then-text-image {
+      .make-xs-column(12);
+      .make-md-column(4);
+
+      text-align: center;
+
+      img {
+        max-width: 320px;
+        max-height: 500px;
+
+        .solidImageFrame();
+
+        @media screen and (max-width: @screen-lg-min) {
+          max-width: 230px;
+          max-height: 350px;
+        }
+      }
+    }
+
+    .image-then-text-text {
+      .make-xs-column(12);
+      .make-md-column(8);
+
+      @media screen and (max-width: @screen-sm-min) {
+        margin-top: 20px;
+      }
+    }
+  }
+}
