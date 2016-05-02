@@ -32,7 +32,6 @@
 
             for (var teamMemberIndex = 0; teamMemberIndex < teamMembers.length; ++teamMemberIndex)
             {
-              var memberDisplayData = {};
               var teamMember = teamMembers[teamMemberIndex];
 
               var employee = teamMember.relations.Employee;
