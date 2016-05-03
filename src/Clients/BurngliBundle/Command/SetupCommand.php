@@ -33,7 +33,7 @@ class SetupCommand extends EngineCommand
 
     $descriptions = $this->getTeamMemberDescriptions();
 
-    $builderSetup->setupTeamMember('burghli', 'Brenda', 'Orozco', 'General Manager', $descriptions->brendaOrozco, 'brenda_orozcol.jpg');
+    $builderSetup->setupTeamMember('burghli', 'Brenda', 'Orozco', 'General Manager', $descriptions->brendaOrozco, 'brenda_orozco.jpg');
     $builderSetup->setupTeamMember('burghli', 'Jessica', 'Torres', 'Production Manager', $descriptions->jessicaTorres, 'jessica_torres.jpg');
     $builderSetup->setupTeamMember('burghli', 'Deanna', 'Burghli', 'Director', $descriptions->deannaBurghli, 'deanna_burghli.jpg');
     $builderSetup->setupTeamMember('burghli', 'Zack', 'Burghli', 'President and CEO', $descriptions->zackBurghli, 'zack_burghli.jpg');
