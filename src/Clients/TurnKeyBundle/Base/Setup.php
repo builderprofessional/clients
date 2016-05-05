@@ -7,6 +7,7 @@
 namespace Clients\TurnKeyBundle\Base;
 
 
+use Clients\TurnKeyBundle\Model\Faq;
 use Clients\TurnKeyBundle\Model\SiteQuery;
 use Clients\TurnKeyBundle\Model\Site;
 use Clients\TurnKeyBundle\Model\TeamMember;
@@ -17,13 +18,16 @@ use Engine\DemographicBundle\Model\Company;
 use Engine\DemographicBundle\Model\Employee;
 use Engine\DemographicBundle\Model\Person;
 use Engine\DemographicBundle\Model\PhonePeer;
-use Engine\MediaBundle\Model\Image;
 
 use ThirdEngine\Factory\Factory;
 
 
 class Setup
 {
+  protected $teamMemberPosition = 1;
+  protected $faqPosition = 1;
+
+
   /**
    * This method will setup a new builder.
    *
@@ -99,6 +103,30 @@ class Setup
     $teamMember->setDescription($description);
     $teamMember->setImageFileName($image);
     $teamMember->setSiteId($site->getSiteId());
+    $teamMember->setSortOrder($this->teamMemberPosition);
     $teamMember->save();
+
+    ++$this->teamMemberPosition;
+  }
+
+  /**
+   * This method will add another FAQ question.
+   *
+   * @param string $builderCode
+   * @param string $question
+   * @param string $answer
+   */
+  public function setupFaq($builderCode, $question, $answer)
+  {
+    $site = Factory::createNewQueryObject(SiteQuery::class)->findOneByCode($builderCode);
+
+    $faq = Factory::createNewObject(Faq::class);
+    $faq->setSiteId($site->getSiteId());
+    $faq->setQuestion($question);
+    $faq->setAnswer($answer);
+    $faq->setSortOrder($this->faqPosition);
+    $faq->save();
+
+    ++$this->faqPosition;
   }
 }

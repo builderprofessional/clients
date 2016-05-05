@@ -5,8 +5,9 @@
     <div class="panel panel-default" ng-repeat="faq in questions | orderBy: 'SortOrder'">
       <div class="panel-heading" role="tab">
         <h4 class="panel-title">
-          <a bs-collapse-toggle data-toggle="collapse" data-animation="am-collapse">Toggle</a>
-          <span ng-bind-html="faq.Question | engTrustWithHtml"></span>
+          <a bs-collapse-toggle data-toggle="collapse" data-animation="am-collapse">
+            {{$index + 1}}. <span ng-bind-html="faq.Question | engTrustWithHtml"></span>
+          </a>
         </h4>
       </div>
       <div class="panel-collapse" role="tabpanel" bs-collapse-target>
