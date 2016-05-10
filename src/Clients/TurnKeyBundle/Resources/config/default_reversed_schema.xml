@@ -32,6 +32,117 @@
   
   
   
+  <table name="turnkey_available_home" phpName="AvailableHome" idMethod="native">
+    <column name="turnkey_available_home_id" phpName="AvailableHomeId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="date_modified" phpName="DateModified" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <column name="date_created" phpName="DateCreated" type="TIMESTAMP" required="true"/>
+    <column name="turnkey_site_id" phpName="SiteId" type="INTEGER" required="true"/>
+    <column name="turnkey_community_id" phpName="CommunityId" type="INTEGER" required="false"/>
+    <column name="demographic_address_id" phpName="DemographicAddressId" type="INTEGER" required="true"/>
+    <column name="bedroom_count" phpName="BedroomCount" type="INTEGER" required="false"/>
+    <column name="full_bathroom_count" phpName="FullBathroomCount" type="INTEGER" required="false"/>
+    <column name="half_bathroom_count" phpName="HalfBathroomCount" type="INTEGER" required="false"/>
+    <column name="square_feet" phpName="SquareFeet" type="INTEGER" required="false"/>
+    <column name="size" phpName="Size" type="VARCHAR" size="255" required="false"/>
+    <column name="price" phpName="Price" type="VARCHAR" size="255" required="false"/>
+    <column name="status" phpName="Status" type="VARCHAR" size="255" required="false"/>
+    <column name="description" phpName="Description" type="VARCHAR" size="255" required="false"/>
+    <column name="sort_order" phpName="SortOrder" type="INTEGER" required="false"/>
+    <foreign-key foreignTable="turnkey_site" name="turnkey_available_home_ibfk_1">
+      <reference local="turnkey_site_id" foreign="turnkey_site_id"/>
+    </foreign-key>
+    <foreign-key foreignTable="turnkey_community" name="turnkey_available_home_ibfk_2">
+      <reference local="turnkey_community_id" foreign="turnkey_community_id"/>
+    </foreign-key>
+    <foreign-key foreignTable="demographic_address" name="turnkey_available_home_ibfk_3">
+      <reference local="demographic_address_id" foreign="demographic_address_id"/>
+    </foreign-key>
+    <index name="date_created">
+      <index-column name="date_created"/>
+    </index>
+    <index name="turnkey_site_id">
+      <index-column name="turnkey_site_id"/>
+    </index>
+    <index name="turnkey_community_id">
+      <index-column name="turnkey_community_id"/>
+    </index>
+    <index name="demographic_address_id">
+      <index-column name="demographic_address_id"/>
+    </index>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="turnkey_build_process" phpName="BuildProcess" idMethod="native">
+    <column name="turnkey_build_process_id" phpName="BuildProcessId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="date_modified" phpName="DateModified" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <column name="date_created" phpName="DateCreated" type="TIMESTAMP" required="true"/>
+    <column name="turnkey_site_id" phpName="SiteId" type="INTEGER" required="true"/>
+    <column name="process" phpName="Process" type="LONGVARCHAR" required="false"/>
+    <column name="image" phpName="Image" type="VARCHAR" size="255" required="false"/>
+    <column name="sort_order" phpName="SortOrder" type="INTEGER" required="true"/>
+    <foreign-key foreignTable="turnkey_site" name="turnkey_build_process_ibfk_1">
+      <reference local="turnkey_site_id" foreign="turnkey_site_id"/>
+    </foreign-key>
+    <index name="date_created">
+      <index-column name="date_created"/>
+    </index>
+    <index name="turnkey_site_id">
+      <index-column name="turnkey_site_id"/>
+    </index>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="turnkey_community" phpName="Community" idMethod="native">
+    <column name="turnkey_community_id" phpName="CommunityId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="date_modified" phpName="DateModified" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <column name="date_created" phpName="DateCreated" type="TIMESTAMP" required="true"/>
+    <column name="turnkey_site_id" phpName="SiteId" type="INTEGER" required="true"/>
+    <column name="name" phpName="Name" type="VARCHAR" size="255" required="true"/>
+    <column name="latitude" phpName="Latitude" type="VARCHAR" size="255" required="false"/>
+    <column name="longitude" phpName="Longitude" type="VARCHAR" size="255" required="false"/>
+    <column name="sort_order" phpName="SortOrder" type="INTEGER" required="false"/>
+    <foreign-key foreignTable="turnkey_site" name="turnkey_community_ibfk_1">
+      <reference local="turnkey_site_id" foreign="turnkey_site_id"/>
+    </foreign-key>
+    <index name="date_created">
+      <index-column name="date_created"/>
+    </index>
+    <index name="turnkey_site_id">
+      <index-column name="turnkey_site_id"/>
+    </index>
+    <index name="sort_order">
+      <index-column name="sort_order"/>
+    </index>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="turnkey_faq" phpName="Faq" idMethod="native">
+    <column name="turnkey_faq_id" phpName="FaqId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="date_modified" phpName="DateModified" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <column name="date_created" phpName="DateCreated" type="TIMESTAMP" required="true"/>
+    <column name="turnkey_site_id" phpName="SiteId" type="INTEGER" required="true"/>
+    <column name="question" phpName="Question" type="LONGVARCHAR" required="false"/>
+    <column name="answer" phpName="Answer" type="LONGVARCHAR" required="false"/>
+    <column name="sort_order" phpName="SortOrder" type="INTEGER" required="false"/>
+    <foreign-key foreignTable="turnkey_site" name="turnkey_faq_ibfk_1">
+      <reference local="turnkey_site_id" foreign="turnkey_site_id"/>
+    </foreign-key>
+    <index name="date_created">
+      <index-column name="date_created"/>
+    </index>
+    <index name="turnkey_site_id">
+      <index-column name="turnkey_site_id"/>
+    </index>
+    <index name="sort_order">
+      <index-column name="sort_order"/>
+    </index>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
   <table name="turnkey_site" phpName="Site" idMethod="native">
     <column name="turnkey_site_id" phpName="SiteId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
     <column name="date_modified" phpName="DateModified" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>

@@ -33,7 +33,86 @@ class SetupCommand extends EngineCommand
 
     $this->setupTeam($builderSetup);
     $this->setupFaq($builderSetup);
+    $this->setupAvailableHomes($builderSetup);
   }
+
+  protected function setupAvailableHomes(Setup $builderSetup)
+  {
+    $builderSetup->setupAvailableHome(
+      'burghli', '2906 Paige', null, null, null, 4, 2, null, 1391, null, null, 'Sold', 'This house is super energy efficient!'
+    );
+
+    $description = <<<STR
+Uniquely designed, Elegant 1 Story home with brick and stone elevation. FULLY LOADED! Chef
+inspired kitchen features granite countertops, 42in. designer cabinets & stainless steel
+appliances. Spacious family room offers a majestic stone fireplace with matching stone
+accent wall under breakfast bar. Retreat to the sprawling master suite that includes
+an expansive walk-in closet, whirlpool tub with separate tile shower, double vanity
+with granite countertops and oil rubbed bronze hardware. Crown Molding in common
+areas. Insulated Carriage House Garage Door in Cedar color with Lasalle style windows
+and wrought iron hardware includes garage door opener. High Efficiency 16 Seer HVAC
+system. Spacious Secondary Bedrooms. Covered Front and Rear Porches. Fantastic
+Location! Look No Further, Your Dream Home is Here!
+STR;
+
+    $builderSetup->setupAvailableHome(
+      'burghli',
+      '29735 Quinn', null, null, null,
+      3, 2, null, null, '1639 / 2498', '$245,000',
+      'Available', $description
+    );
+
+    $builderSetup->setupAvailableHome(
+      'burghli',
+      '7918 Beckley St.', null, null, null,
+      3, 2, null, 1290, null, '$163,000',
+      'Available', 'To be built, construction to start 3/2016.'
+    );
+
+    $builderSetup->setupAvailableHome(
+      'burghli',
+      '7914 Beckley St.', null, null, null,
+      3, 2, null, 1298, null, '$160,000',
+      'Available', 'To be built, construction to start 3/2016.'
+    );
+
+    $builderSetup->setupAvailableHome(
+      'burghli',
+      '3417 Elgin', null, null, null,
+      3, 2, 1, 1602, null, null,
+      'Sold', 'Completion date June 30th'
+    );
+
+    $builderSetup->setupAvailableHome(
+      'burghli',
+      '15531 Maple', null, null, null,
+      3, 2, null, 1667, null, null,
+      'Sold', 'Construction starts May 1st'
+    );
+
+    $description = <<<STR
+Uniquely designed, Elegant 1 Story home with brick and stone elevation. FULLY LOADED!
+Chef inspired kitchen features granite countertops, 42in. designer cabinets & stainless
+steel appliances. Spacious family room offers a majestic stone fireplace with matching
+stone accent wall under breakfast bar. Retreat to the sprawling master suite that
+includes an expansive walk-in closet, whirlpool tub with separate tile shower, double
+vanity with granite countertops and oil rubbed bronze hardware. Crown Molding in
+common areas. Insulated Carriage House Garage Door in Cedar color with Lasalle style
+windows and wrought iron hardware includes garage door opener. High Efficiency 16
+Seer HVAC system. Spacious Secondary Bedrooms. Covered Front and Rear Porches.
+Fantastic Location! Look No Further, Your Dream Home is Here!
+STR;
+
+
+    $builderSetup->setupAvailableHome(
+      'burghli',
+      '29727 Quinn', null, null, null,
+      3, 2, null, null, '2188 / 2922', '$275,000',
+      'Available', $description
+    );
+  }
+
+
 
   protected function setupFaq(Setup $builderSetup)
   {

@@ -7,6 +7,7 @@
 namespace Clients\TurnKeyBundle\Base;
 
 
+use Clients\TurnKeyBundle\Model\AvailableHome;
 use Clients\TurnKeyBundle\Model\Faq;
 use Clients\TurnKeyBundle\Model\SiteQuery;
 use Clients\TurnKeyBundle\Model\Site;
@@ -26,6 +27,7 @@ class Setup
 {
   protected $teamMemberPosition = 1;
   protected $faqPosition = 1;
+  protected $availableHomePosition = 1;
 
 
   /**
@@ -128,5 +130,47 @@ class Setup
     $faq->save();
 
     ++$this->faqPosition;
+  }
+
+  /**
+   * This method will add a new available home.
+   *
+   * @param string $builderCode
+   * @param string $address1
+   * @param string $city
+   * @param string $state
+   * @param string $zipCode
+   * @param int $bedroomCount
+   * @param int $fullBathroomCount
+   * @param int $halfBathroomCount
+   * @param int $squareFeet
+   * @param string $description
+   */
+  public function setupAvailableHome($builderCode, $address1, $city, $state, $zipCode, $bedroomCount, $fullBathroomCount, $halfBathroomCount, $squareFeet, $size, $price, $status, $description)
+  {
+    $site = Factory::createNewQueryObject(SiteQuery::class)->findOneByCode($builderCode);
+
+    $address = Factory::createNewObject(Address::class);
+    $address->setAddress($address1);
+    $address->setCity($city);
+    $address->setState($state);
+    $address->setZipCode($zipCode);
+    $address->save();
+
+    $availableHome = Factory::createNewObject(AvailableHome::class);
+    $availableHome->setSiteId($site->getSiteId());
+    $availableHome->setDemographicAddressId($address->getAddressId());
+    $availableHome->setBedroomCount($bedroomCount);
+    $availableHome->setFullBathroomCount($fullBathroomCount);
+    $availableHome->setHalfBathroomCount($halfBathroomCount);
+    $availableHome->setSquareFeet($squareFeet);
+    $availableHome->setSize($size);
+    $availableHome->setStatus($status);
+    $availableHome->setPrice($price);
+    $availableHome->setDescription($description);
+    $availableHome->setSortOrder($this->availableHomePosition);
+    $availableHome->save();
+
+    ++$this->availableHomePosition;
   }
 }

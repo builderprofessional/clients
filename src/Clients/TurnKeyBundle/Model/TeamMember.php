@@ -21,10 +21,8 @@ class TeamMember extends BaseTeamMember
   public function removeAllData()
   {
     $employee = $this->getEmployee();
-    $person = $employee->getPerson();
 
     $this->delete();
     $employee->delete();
-    $person->delete();
   }
 }

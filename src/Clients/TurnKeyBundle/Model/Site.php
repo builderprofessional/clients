@@ -47,6 +47,11 @@ class Site extends BaseSite
       $phone->delete();
     }
 
+    foreach ($this->getAvailableHomes() as $home)
+    {
+      $home->removeAllData();
+    }
+
     $this->delete();
     $client->delete();
 
