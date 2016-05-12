@@ -39,7 +39,9 @@ class SetupCommand extends EngineCommand
   protected function setupAvailableHomes(Setup $builderSetup)
   {
     $builderSetup->setupAvailableHome(
-      'burghli', '2906 Paige', null, null, null, 4, 2, null, 1391, null, null, 'Sold', 'This house is super energy efficient!'
+      'burghli', '2906 Paige.jpg',
+      '2906 Paige', null, null, null, 4, 2, null, 1391, null, null, 'Sold',
+      'This house is super energy efficient!'
     );
 
     $description = <<<STR
@@ -56,35 +58,35 @@ Location! Look No Further, Your Dream Home is Here!
 STR;
 
     $builderSetup->setupAvailableHome(
-      'burghli',
+      'burghli', '29735 Quinn.jpg',
       '29735 Quinn', null, null, null,
       3, 2, null, null, '1639 / 2498', '$245,000',
       'Available', $description
     );
 
     $builderSetup->setupAvailableHome(
-      'burghli',
+      'burghli', '7918 Beckley St.jpg',
       '7918 Beckley St.', null, null, null,
       3, 2, null, 1290, null, '$163,000',
       'Available', 'To be built, construction to start 3/2016.'
     );
 
     $builderSetup->setupAvailableHome(
-      'burghli',
+      'burghli', '7914 Beckley St.jpg',
       '7914 Beckley St.', null, null, null,
       3, 2, null, 1298, null, '$160,000',
       'Available', 'To be built, construction to start 3/2016.'
     );
 
     $builderSetup->setupAvailableHome(
-      'burghli',
+      'burghli', '3417 Elgin.jpg',
       '3417 Elgin', null, null, null,
       3, 2, 1, 1602, null, null,
       'Sold', 'Completion date June 30th'
     );
 
     $builderSetup->setupAvailableHome(
-      'burghli',
+      'burghli', '15531 Maple.jpg',
       '15531 Maple', null, null, null,
       3, 2, null, 1667, null, null,
       'Sold', 'Construction starts May 1st'
@@ -105,7 +107,7 @@ STR;
 
 
     $builderSetup->setupAvailableHome(
-      'burghli',
+      'burghli', '29727 Quinn.jpg',
       '29727 Quinn', null, null, null,
       3, 2, null, null, '2188 / 2922', '$275,000',
       'Available', $description

@@ -1,0 +1,34 @@
+.available-homes-listing {
+  .container();
+
+  .available-home-row {
+    .row();
+
+    padding: 30px;
+    margin-top: 20px;
+    background-color: #e6e7e9;
+
+    border: solid black 1px;
+    border-radius: 5px;
+
+    .home-image {
+      .make-xs-column(12);
+      .make-md-column(3);
+
+      img {
+        width: 220px;
+        .solidImageFrame();
+      }
+    }
+
+    .home-info {
+      .make-xs-column(12);
+      .make-md-column(9);
+
+      h2 {
+        .burghliLargeText();
+        color: @burghli-green;
+      }
+    }
+  }
+}

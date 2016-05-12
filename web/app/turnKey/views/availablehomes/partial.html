@@ -1,3 +1,14 @@
 <div class="available-homes-page">
   <div class="page-title-row"><h1>Available Homes</h1></div>
+
+  <div class="available-homes-listing">
+    <div class="available-home-row" ng-repeat="home in homes | orderBy: 'SortOrder'">
+      <div class="home-image">
+        <img ng-src="{{home.Image}}" ng-if="home.Image" />
+      </div>
+      <div class="home-info">
+        <h2>{{home.Title}}</h2>
+      </div>
+    </div>
+  </div>
 </div>

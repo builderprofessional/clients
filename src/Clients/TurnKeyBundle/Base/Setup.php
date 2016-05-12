@@ -136,6 +136,7 @@ class Setup
    * This method will add a new available home.
    *
    * @param string $builderCode
+   * @param string $image
    * @param string $address1
    * @param string $city
    * @param string $state
@@ -146,7 +147,7 @@ class Setup
    * @param int $squareFeet
    * @param string $description
    */
-  public function setupAvailableHome($builderCode, $address1, $city, $state, $zipCode, $bedroomCount, $fullBathroomCount, $halfBathroomCount, $squareFeet, $size, $price, $status, $description)
+  public function setupAvailableHome($builderCode, $image, $address1, $city, $state, $zipCode, $bedroomCount, $fullBathroomCount, $halfBathroomCount, $squareFeet, $size, $price, $status, $description)
   {
     $site = Factory::createNewQueryObject(SiteQuery::class)->findOneByCode($builderCode);
 
@@ -159,6 +160,7 @@ class Setup
 
     $availableHome = Factory::createNewObject(AvailableHome::class);
     $availableHome->setSiteId($site->getSiteId());
+    $availableHome->setImage($image);
     $availableHome->setDemographicAddressId($address->getAddressId());
     $availableHome->setBedroomCount($bedroomCount);
     $availableHome->setFullBathroomCount($fullBathroomCount);
