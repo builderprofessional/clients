@@ -3,9 +3,8 @@
 
   <div class="process-step" ng-repeat="step in steps | orderBy: 'StepNumber'">
     <div class="step-container">
-      <div class="step-number">{{step.StepNumber}}</div>
       <div class="step-description">
-        <span class="step-number">{{step.StepNumber}}</span>
+        <div class="step-number">{{step.StepNumber}}</div>
         <span class="step-text" ng-bind-html="step.Description | engTrustWithHtml"></span>
       </div>
       <div class="step-image">&nbsp;</div>

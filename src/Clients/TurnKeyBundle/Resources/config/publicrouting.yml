@@ -25,3 +25,7 @@ build_process_get:
 team_get:
   path: /team
   defaults: { _controller: ClientsTurnKeyBundle:Team:get }
+
+available_home_get:
+  path: /availableHome
+  defaults: { _controller: ClientsTurnKeyBundle:AvailableHome:get }

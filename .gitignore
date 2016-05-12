@@ -1,4 +1,5 @@
 /web/bundles/
+/app/propel/
 /app/bootstrap.php.cache
 /app/cache/*
 /app/config/parameters.yml
@@ -13,3 +14,9 @@
 /bower_components/
 /node_modules/
 /dist/
+
+src/Clients/BurghliBundle/Resources/config/default_reversed_schema.xml
+src/Clients/TurnKeyBundle/Resources/config/default_reversed_schema.xml
+
+src/Clients/TurnKeyBundle/Model/map
+src/Clients/TurnKeyBundle/Model/om
