@@ -14,7 +14,7 @@
 /node_modules/
 /dist/
 
-src/Clients/BurghliBundle/Resources/config/default_reversed_schema.xml
+src/Clients/BurngliBundle/Resources/config/default_reversed_schema.xml
 src/Clients/TurnKeyBundle/Resources/config/default_reversed_schema.xml
 
 src/Clients/TurnKeyBundle/Model/map
