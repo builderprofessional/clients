@@ -7,6 +7,7 @@
     padding: 30px;
     margin-top: 20px;
     background-color: #e6e7e9;
+    width: 100%;
 
     border: solid black 1px;
     border-radius: 5px;
@@ -14,6 +15,10 @@
     .home-image {
       .make-xs-column(12);
       .make-md-column(3);
+
+      @media screen and (max-width: @screen-xs-min) {
+        text-align: center;
+      }
 
       img {
         width: 220px;
@@ -25,9 +30,60 @@
       .make-xs-column(12);
       .make-md-column(9);
 
+      @media screen and (max-width: @screen-md-max) {
+        padding-left: 40px;
+      }
+
+      @media screen and (max-width: @screen-xs-min) {
+        padding-left: 0px;
+        margin-top: 20px;
+      }
+
       h2 {
+        margin-top: 0px;
+        margin-bottom: 20px;
         .burghliLargeText();
         color: @burghli-green;
+      }
+
+      .home-highlights {
+        width: 100%;
+
+        .home-features {
+          width: 70%;
+          float: left;
+
+          ul {
+            list-style-type: none;
+
+            li {
+              margin-left: -30px;
+              .burghliMediumText();
+            }
+          }
+        }
+
+        .home-sale-details {
+          width: 30%;
+          float: left;
+          text-align: right;
+
+          ul {
+            list-style-type: none;
+
+            li {
+              .burghliLargeText();
+              color: @burghli-green;
+            }
+          }
+        }
+
+        clear: both;
+      }
+
+      .home-description {
+        margin-top: 20px;
+        width: 100%;
       }
     }
   }

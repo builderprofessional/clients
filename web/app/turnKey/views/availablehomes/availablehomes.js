@@ -46,7 +46,19 @@
 
               var homeDisplayData = {
                 'Title': address.model.Address,
-                'Image': imageUrl
+                'Image': imageUrl,
+
+                'BedroomCount': home.model.BedroomCount,
+                'FullBathroomCount': home.model.FullBathroomCount,
+                'HalfBathroomCount': home.model.HalfBathroomCount,
+                'SquareFeet': home.model.SquareFeet,
+                'Size': home.model.Size,
+
+                'Status': home.model.Status,
+                'Price': home.model.Price,
+
+                'Description': home.model.Description,
+                'SortOrder': home.model.SortOrder
               };
 
               $scope.homes.push(homeDisplayData);

@@ -7,7 +7,27 @@
         <img ng-src="{{home.Image}}" ng-if="home.Image" />
       </div>
       <div class="home-info">
-        <h2>{{home.Title}}</h2>
+        <div class="home-highlights">
+          <div class="home-features">
+            <h2>{{home.Title}}</h2>
+
+            <ul>
+              <li ng-if="home.BedroomCount">Bedrooms: {{home.BedroomCount}}</li>
+              <li ng-if="home.FullBathroomCount">Bathrooms: {{home.FullBathroomCount}}</li>
+              <li ng-if="home.HalfBathroomCount">Half-Bathrooms: {{home.HalfBathroomCount}}</li>
+              <li ng-if="home.SquareFeet">Square Feet: {{home.SquareFeet}}</li>
+              <li ng-if="home.Size">Size: {{home.Size}}</li>
+            </ul>
+          </div>
+          <div class="home-sale-details">
+            <ul>
+              <li ng-if="home.Status">{{home.Status}}</li>
+              <li ng-if="home.Price">{{home.Price}}</li>
+            </ul>
+          </div>
+        </div>
+        <br style="clear: both;" />
+        <div class="home-description">{{home.Description}}</div>
       </div>
     </div>
   </div>
