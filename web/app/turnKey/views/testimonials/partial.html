@@ -4,11 +4,12 @@
   <div class="testimonials-content">
     <div class="testimonial-row" ng-repeat="testimonial in testimonials">
       <div class="testimonial-images">
-        <img ng-src="{{getImageUrl(testimonial.photo1)}}" />
-        <img ng-src="{{getImageUrl(testimonial.photo2)}}" />
+        &nbsp;
       </div>
-      <div class="testimonial-details">
-        <div class="testimonial-text" ng-bind-html="testimonial.text | engTrustWithHtml"></div>
+      <div ng-class="getDetailsContainerClass(testimonial)">
+        <div class="testimonial-title">{{testimonial.Title}}</div>
+        <div class="testimonial-text" ng-bind-html="testimonial.MainText | engTrustWithHtml"></div>
+        <div class="testimonial-signature">-- {{testimonial.Signature}}</div>
       </div>
     </div>
   </div>

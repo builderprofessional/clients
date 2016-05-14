@@ -12,6 +12,7 @@ use Clients\TurnKeyBundle\Model\Faq;
 use Clients\TurnKeyBundle\Model\SiteQuery;
 use Clients\TurnKeyBundle\Model\Site;
 use Clients\TurnKeyBundle\Model\TeamMember;
+use Clients\TurnKeyBundle\Model\Testimonial;
 
 use Engine\BillingBundle\Model\Client;
 use Engine\DemographicBundle\Model\Address;
@@ -22,12 +23,16 @@ use Engine\DemographicBundle\Model\PhonePeer;
 
 use ThirdEngine\Factory\Factory;
 
+use DateTime;
+
+
 
 class Setup
 {
   protected $teamMemberPosition = 1;
   protected $faqPosition = 1;
   protected $availableHomePosition = 1;
+  protected $testimonialPosition = 1;
 
 
   /**
@@ -73,6 +78,34 @@ class Setup
     $site->setBillingClientId($client->getClientId());
     $site->setCode($builderCode);
     $site->save();
+  }
+
+  /**
+   * This method will add a new testimonial.
+   *
+   * @param string $builderCode
+   * @param string $title
+   * @param string $image
+   * @param DateTime $givenDate
+   * @param string $signature
+   * @param string $mainText
+   */
+  public function setupTestimonial($builderCode, $title, $image, DateTime $givenDate = null, $signature, $mainText)
+  {
+    $site = Factory::createNewQueryObject(SiteQuery::class)->findOneByCode($builderCode);
+
+    $testimonial = Factory::createNewObject(Testimonial::class);
+
+    $testimonial->setSiteId($site->getSiteId());
+    $testimonial->setTitle($title);
+    $testimonial->setImage($image);
+    $testimonial->setGivenDate($givenDate);
+    $testimonial->setSignature($signature);
+    $testimonial->setMainText($mainText);
+    $testimonial->setSortOrder($this->testimonialPosition);
+    $testimonial->save();
+
+    ++$this->testimonialPosition;
   }
 
   /**

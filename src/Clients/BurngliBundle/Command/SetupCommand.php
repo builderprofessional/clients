@@ -12,6 +12,7 @@ use Engine\EngineBundle\Command\EngineCommand;
 
 use ThirdEngine\Factory\Factory;
 
+use DateTime;
 use stdClass;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -34,6 +35,109 @@ class SetupCommand extends EngineCommand
     $this->setupTeam($builderSetup);
     $this->setupFaq($builderSetup);
     $this->setupAvailableHomes($builderSetup);
+    $this->setupTestimonials($builderSetup);
+  }
+
+  protected function setupTestimonials(Setup $builderSetup)
+  {
+    $abrownDescription = <<<STR
+We have had the pleasure of meeting Burghli Homes whom are remarkable people. We were
+given step-by- step of what to expect of our home and everything was done in a timely manner.
+Because we live next door, we were fortunate in seeing the entire process of the crew at work.
+I’d like to give recognition to Mr. Jesse Aldrite for a job well done and his concern for others;
+he indeed cares a great deal about his work.
+STR;
+
+    $alottDescription = <<<STR
+In reference of Jessie, my builder, I must say he’s very hard working. He went from bottom to
+top to finish his work. It was a struggle, but he made it. I want to say thanks to all. I’m
+satisfied with my house and am thankful to the City of Houston, Burghli Homes and the staff who
+worked here.
+STR;
+
+    $mclenonDescription = <<<STR
+I am pleased to write this letter of recommendation in regards to Cesar Ruiz. The home
+building process has been a great experience. I am thankful for the hard work and am very
+pleased with the timely manner of the home being built. Cesar has made this a very smooth
+process, even when there was bad weather. Seeing the hard work, responsibility and
+dedication, I am pleased to say it has been a pleasure to see someone with a strong work ethic
+that has a great attitude toward an ability to handle an ever-changing work load.
+STR;
+
+    $jacksonDescription = <<<STR
+I would like to send my gratitude and appreciation for the excellent services that Burghli
+Homes has provided. Rolando kept me informed on every detail of building my home, whether
+big or small. The work performed was astonishing. I would definitely recommend your service
+to anyone I know. I want to personally thank you for all your hard work and dedication. I can’t
+express enough how I’m amazed at such a good job you’ve done. Thank you once again. I love
+my home!
+STR;
+
+    $hamptonDescription = <<<STR
+I am truly grateful for the blessing you guys have bestowed upon me. It’s much more than a
+house to me. It’s a safe and secure place where I am free to live and do the things that bring me
+happiness and peace. This entire process has been a very pleasant experience. The staff of
+Burhgli Homes did a fantastic job of walking me through the process and being there to assist
+me every step of the way. The representatives were willing to meet me halfway when I didn’t
+have transportation to get to their office to sign documents. They were always courteous and
+never made it seem as though I was a burden when I called. The staff went above and beyond
+to make sure all my needs were met and all of my questions were answered. Thank you,
+Burghli, for building a beautiful house, but for more importantly, building me a home. I can’t
+wait to get back to the things that bring warmth to my heart, like baking a cake or hosting a
+holiday dinner for my family. Thank you, Burghli Homes, for all that you’ve done.
+STR;
+
+    $campbellDescription = <<<STR
+I write this letter in recommendation of Mr. Rolando Guillen of Burghli Homes as a general
+contractor. I had the pleasure of working with Mr. Guillen on the renovation of my new home. I
+can recommend him highly and without reservation. Throughout the course of the renovation,
+Mr. Guillen was a consummate professional. He was accurate in his initial assessment of the
+scale and cost of our project. He was absolutely clear in his record keeping and time log. He
+chose and managed the sub-contractors well. Our job was done with care precision. He is a
+gifted woodcrafter and the custom cabinetry he designed and executed are lovely. In addition,
+he is extremely clean and tidy in the workplace. He and his assistant never left the worksite in
+disarray. They vacuumed all drywall dust daily. Mr. Guillen took special care to prevent any of
+the job dust from trailing throughout the house. The only complexity in working with Mr.
+Guillen is that, as he himself will tell you, good work takes time to complete. Patience is
+required when you work with a perfectionist. Although our project took time to complete, I
+think we have a wonderful outcome and a work of art.
+STR;
+
+    $collinsDescription = <<<STR
+I would like to express my thanks to the City of Houston for my new home. Special thanks to
+contractor Bryan Mouton and Superintendent Christina Rodriguez for their professional
+assistance in helping me through the building process of my new home. They were very helpful
+in answering any questions I had and clarifying anything I did not understand. I am so
+appreciative of the two of them. Also, special thanks to each crew member that had a part in
+the building of my hoe. They did a tremendous job and I am so grateful to them. I love my new
+home and will abide by all the rules that apply. I am anxiously awaiting my move in so that I
+may enjoy the comfort and beauty of my home.
+STR;
+
+    $grundyDescription = <<<STR
+I would like to express my gratitude to the special people who are working to help me with my
+dream come true house. All of my life, while raising children, I have looked and dreamed of
+owning a better house than the one which was torn down. My old house was very messed up
+from the effect of many hurricanes. Somehow I believed that it was possible, but I had no idea
+how to accomplish such an event. Through God’s grace, mercy and favor, I was led to apply to
+the Disaster Recovery Program in Houston, TX where the people have great integrity. Thank you
+so much for helping me get into my dream home. We love it. I am having a very pleasant
+experience in building my new home. I am writing this to tell you how much my family and I are
+enjoying watching it being built. I am looking forward to walking on the beautiful carpet,
+looking through the beautiful windows, and looking up at the extraordinary high ceilings.
+STR;
+
+
+
+    $abrownDate = new DateTime('2015-08-30');
+    $builderSetup->setupTestimonial('burghli', '905 Prosper', null, $abrownDate, 'A. Brown and S.Zeung', $abrownDescription);
+    $builderSetup->setupTestimonial('burghli', '938 Marcolin', null, null, 'A. Lott', $alottDescription);
+    $builderSetup->setupTestimonial('burghli', '989 Marjorie', null, null, 'C. Mclenon and Family', $mclenonDescription);
+    $builderSetup->setupTestimonial('burghli', '1704 Capron', null, null, 'J. Jackson', $jacksonDescription);
+    $builderSetup->setupTestimonial('burghli', '4830 Winfree', null, null, 'E. Hampton', $hamptonDescription);
+    $builderSetup->setupTestimonial('burghli', '5003 Lyons', null, null, 'V. Campbell', $campbellDescription);
+    $builderSetup->setupTestimonial('burghli', '5022 Idaho', null, null, 'J. Collins', $collinsDescription);
+    $builderSetup->setupTestimonial('burghli', '8409 Burg', null, null, 'B. Grundy', $grundyDescription);
   }
 
   protected function setupAvailableHomes(Setup $builderSetup)

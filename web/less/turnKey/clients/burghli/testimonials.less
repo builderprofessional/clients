@@ -4,7 +4,7 @@
   .testimonial-row {
     .row();
 
-    margin-top: 30px;
+    margin-top: 20px;
 
     border-bottom: solid @burghli-green 2px;
     padding-bottom: 15px;
@@ -23,12 +23,30 @@
     }
 
     .testimonial-details {
-      .burghliLargeText();
+      .burghliMediumText();
       .make-xs-column(12);
       .make-md-column(10);
 
-      .testimonial-name {
+      &.no-image {
+        .make-md-column(12);
+      }
+
+      .testimonial-title {
+        .burghliLargeText();
         text-decoration: underline;
+        color: @burghli-green;
+      }
+
+      .testimonial-text {
+        margin-top: 15px;
+        text-indent: 40px;
+      }
+
+      .testimonial-signature {
+        padding-left: 40px;
+        margin-top: 15px;
+        color: @burghli-green;
+        font-style: italic;;
       }
     }
   }

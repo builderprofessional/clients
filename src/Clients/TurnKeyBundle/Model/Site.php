@@ -38,6 +38,11 @@ class Site extends BaseSite
       $faq->delete();
     }
 
+    foreach ($this->getTestimonials() as $testimonial)
+    {
+      $testimonial->delete();
+    }
+
     $client = $this->getClient();
     $company = $client->getCompany();
     $address = $company->getAddress();

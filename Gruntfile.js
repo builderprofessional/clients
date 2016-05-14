@@ -300,6 +300,7 @@ module.exports = function(grunt) {
       options: {
         sub: true,
         laxcomma: true,
+        laxbreak: true,
         loopfunc: true
       }
     },
