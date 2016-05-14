@@ -36,6 +36,118 @@ class SetupCommand extends EngineCommand
     $this->setupFaq($builderSetup);
     $this->setupAvailableHomes($builderSetup);
     $this->setupTestimonials($builderSetup);
+    $this->setupBuildProcess($builderSetup);
+  }
+
+  protected function setupBuildProcess(Setup $builderSetup)
+  {
+    $initialMeetingText = <<<STR
+This meeting is an opportunity to meet the construction manager and have your questions
+answered. The construction manager will go over the plans and selections and set a time line
+of expectations for the construction process.
+STR;
+
+    $foundationText = <<<STR
+After the lot gets scraped, the form gets set. Underground plumbing and electrical are placed
+at this time. After plumbing and electrical pass inspection by city official, the
+foundation contractor excavates footings and beams. Then, the reinforcing steel gets placed
+and inspected. Once it passes inspection, the concrete is poured. During this
+process, several Quality Inspections will be conducted by your Construction Manager.
+STR;
+
+    $frameText = <<<STR
+Upon completion of rough framing and prior to the installation of your mechanicals, your
+Construction Manager will complete the Frame Inspection. During this time he will
+confirm that your home is constructed with the specific options that you have selected as
+well as confirming the quality of the construction of your home. The Construction Manager
+will also inspect several key areas of the framing of your home such as room dimensions,
+window dimensions, elevations, and bearing points. Then the Local Building Official will
+inspect the framing to make sure everything is done according to plans,
+specifications, and code.
+STR;
+
+    $roughMechanicalsText = <<<STR
+Now that your home is constructed, it is time to install the contents of your home. Over the
+next several days you will see your home transform from an empty shell to something very
+special. This is when everything that is going to be covered up with insulation and drywall
+is installed. While on the outside it looks like nothing is going on, inside is
+where all the activity is. First your rough plumbing will be installed including your
+tubs and showers. You will also see all of your water supply lines and drains run
+in your walls and ceilings. Once the plumbing is complete, the heating and cooling contractor
+will be in to install all of the duct work necessary to move fresh air in and old air out of each
+room in your house. After the heating and cooling contractor is complete you will notice all
+of the electrical wires, switch boxes, light openings, and phone/cable locations
+installed in your new home.
+<br /><br />
+Once all of your rough mechanicals are installed, several inspections will be conducted by
+the local building department to ensure that the mechanical components along with the
+construction of your home comply with any and all municipal building codes.
+<br /><br />
+Upon the approval of all necessary inspections, your Construction Coordinator will complete
+a Rough Mechanical Inspection to verify that all of components of the mechanical system
+are installed to plans specifications as well as confirm that those items specific to your
+home are installed prior to the installation of Insulation and Drywall.
+STR;
+
+  $insulationText = <<<STR
+The home is coming to life. The first thing to happens is the insulation will be installed
+in your exterior walls and in your attic. Once we have insulated the home properly you will
+see several days of drywall installation take place.
+STR;
+
+    $drywallText = <<<STR
+First the drywall will be hung on the walls and ceilings of your home. Typically this is a
+two day process. After the drywall is installed, there will be several days of taping and
+finishing the drywall. On or around the time that the drywall work has begun in your new home,
+you will also see the exterior begin to take life. The exterior features such as brick and siding
+will be installed.
+<br /><br />
+During this phase of construction your Construction Coordinator will be confirming the quality
+ of the drywall installation as well as the exterior features of your new home.
+STR;
+
+    $finishesText = <<<STR
+Now that the drywall is complete, things begin moving very quickly. Almost every day there
+will be something new going on in your home. First the interior trim consisting of your
+interior doors, base moldings, and cabinets will be installed. The next step will be paint.
+But just before paint your Construction Coordinator will conduct another Inspection. The
+Construction Manager will confirm the quality of the interior trim and drywall prior to
+painting the interior of your home.
+<br /><br />
+During this phase of construction you will also see the remaining items on the exterior
+of your home take shape like the driveway, sidewalks, porch posts, garage doors, and exterior
+painting. Because your home is being built in an ever changing climate, these items may be
+completed at different stages of construction depending on the weather and time of year.
+<br /><br />
+Once we have ensured that the trim and drywall are ready for paint, all the fun will begin
+on the interior of your home. The interior of your home will be painted, hard surface
+flooring will be installed, and countertops will go in. Once this is all done, your
+final mechanicals will be installed. This will consist of your plumbing fixtures, light
+fixtures, plugs & switches, and floor registers.
+<br /><br />
+As soon as your interior finishes are in, your house will be cleaned, carpet will be
+installed and your Construction Manager will conduct one more Quality inspection. At the
+Completed Home Inspection, your Construction Coordinator will ensure the home is ready
+for the new homeowner to move in.
+STR;
+
+  $orientationText = <<<STR
+Now that your new homes has passed all the required municipal inspections, received a
+Certificate of Occupancy, and the Construction Coordinator has completed their final
+Quality Inspection, you and the Construction Manager will complete a very detailed walk
+through of your new home. During this meeting, you will not only inspect the entire
+home but you will be educated on all the inter-workings of your new home.
+STR;
+
+
+    $builderSetup->setupProcess('burghli', 'Preconstruction Meeting', $initialMeetingText, 'initial_meeting.jpg');
+    $builderSetup->setupProcess('burghli', 'Foundation: 7-14 Days', $foundationText, 'foundation.jpg');
+    $builderSetup->setupProcess('burghli', 'Rough Framing: 10-14 Days', $frameText, 'framing.jpg');
+    $builderSetup->setupProcess('burghli', 'Rough Mechanicals', $roughMechanicalsText, 'rough_mechanicals.jpg');
+    $builderSetup->setupProcess('burghli', 'Wall Cover', $insulationText, 'insulation.jpg');
+    $builderSetup->setupProcess('burghli', null, $drywallText, 'drywall.jpg');
+    $builderSetup->setupProcess('burghli', 'Interior & Exterior Finishes', $finishesText, 'finishes.jpg');
+    $builderSetup->setupProcess('burghli', 'New Home Orientation Walk', $orientationText, 'orientation.jpg');
   }
 
   protected function setupTestimonials(Setup $builderSetup)
@@ -126,7 +238,6 @@ experience in building my new home. I am writing this to tell you how much my fa
 enjoying watching it being built. I am looking forward to walking on the beautiful carpet,
 looking through the beautiful windows, and looking up at the extraordinary high ceilings.
 STR;
-
 
 
     $abrownDate = new DateTime('2015-08-30');

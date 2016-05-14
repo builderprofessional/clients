@@ -1,54 +1,63 @@
-.testimonials-content {
-  .container();
-
-  .testimonial-row {
-    .row();
-
-    margin-top: 20px;
-
-    border-bottom: solid @burghli-green 2px;
-    padding-bottom: 15px;
-
-    .testimonial-images {
-      .make-xs-column(12);
-      .make-md-column(2);
-
-      img {
-        float: left;
-        max-width: 130px;
-
-        margin-left: 20px;
-        margin-top: 5px;
+.testimonials-page {
+  .page-title-row {
+    h1 {
+      @media screen and (max-width: @screen-md-min) {
+        font-size: 2em;
       }
     }
+  }
 
-    .testimonial-details {
-      .burghliMediumText();
-      .make-xs-column(12);
-      .make-md-column(10);
+  .testimonials-content {
+    .container();
 
-      &.no-image {
-        .make-md-column(12);
+    .testimonial-row {
+      .row();
+
+      margin-top: 20px;
+
+      border-bottom: solid @burghli-green 2px;
+      padding-bottom: 15px;
+
+      .testimonial-images {
+        .make-xs-column(12);
+        .make-md-column(2);
+
+        img {
+          float: left;
+          max-width: 130px;
+
+          margin-left: 20px;
+          margin-top: 5px;
+        }
       }
 
-      .testimonial-title {
-        .burghliLargeText();
-        text-decoration: underline;
-        color: @burghli-green;
-      }
+      .testimonial-details {
+        .burghliMediumText();
+        .make-xs-column(12);
+        .make-md-column(10);
 
-      .testimonial-text {
-        margin-top: 15px;
-        text-indent: 40px;
-      }
+        &.no-image {
+          .make-md-column(12);
+        }
 
-      .testimonial-signature {
-        padding-left: 40px;
-        margin-top: 15px;
-        color: @burghli-green;
-        font-style: italic;;
+        .testimonial-title {
+          .burghliLargeText();
+          text-decoration: underline;
+          color: @burghli-green;
+        }
+
+        .testimonial-text {
+          margin-top: 15px;
+          text-indent: 40px;
+        }
+
+        .testimonial-signature {
+          padding-left: 40px;
+          margin-top: 15px;
+          color: @burghli-green;
+          font-style: italic;;
+        }
       }
     }
   }
 }
-

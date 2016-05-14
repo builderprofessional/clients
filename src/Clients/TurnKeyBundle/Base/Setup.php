@@ -8,6 +8,7 @@ namespace Clients\TurnKeyBundle\Base;
 
 
 use Clients\TurnKeyBundle\Model\AvailableHome;
+use Clients\TurnKeyBundle\Model\BuildProcess;
 use Clients\TurnKeyBundle\Model\Faq;
 use Clients\TurnKeyBundle\Model\SiteQuery;
 use Clients\TurnKeyBundle\Model\Site;
@@ -33,6 +34,7 @@ class Setup
   protected $faqPosition = 1;
   protected $availableHomePosition = 1;
   protected $testimonialPosition = 1;
+  protected $buildProcessPosition = 1;
 
 
   /**
@@ -78,6 +80,29 @@ class Setup
     $site->setBillingClientId($client->getClientId());
     $site->setCode($builderCode);
     $site->save();
+  }
+
+  /**
+   * This method will setup a new build process step.
+   *
+   * @param string $builderCode
+   * @param string $title
+   * @param string $process
+   * @param string $image
+   */
+  public function setupProcess($builderCode, $title, $process, $image)
+  {
+    $site = Factory::createNewQueryObject(SiteQuery::class)->findOneByCode($builderCode);
+
+    $step = Factory::createNewObject(BuildProcess::class);
+    $step->setSiteId($site->getSiteId());
+    $step->setTitle($title);
+    $step->setProcess($process);
+    $step->setImage($image);
+    $step->setSortOrder($this->buildProcessPosition);
+    $step->save();
+
+    ++$this->buildProcessPosition;
   }
 
   /**
