@@ -9,6 +9,7 @@ namespace Clients\TurnKeyBundle\Base;
 
 use Clients\TurnKeyBundle\Model\AvailableHome;
 use Clients\TurnKeyBundle\Model\BuildProcess;
+use Clients\TurnKeyBundle\Model\Community;
 use Clients\TurnKeyBundle\Model\Faq;
 use Clients\TurnKeyBundle\Model\SiteQuery;
 use Clients\TurnKeyBundle\Model\Site;
@@ -35,6 +36,7 @@ class Setup
   protected $availableHomePosition = 1;
   protected $testimonialPosition = 1;
   protected $buildProcessPosition = 1;
+  protected $communityPosition = 1;
 
 
   /**
@@ -80,6 +82,29 @@ class Setup
     $site->setBillingClientId($client->getClientId());
     $site->setCode($builderCode);
     $site->save();
+  }
+
+  /**
+   * This method will add a new community.
+   *
+   * @param string $builderCode
+   * @param string $name
+   * @param string $latitude
+   * @param string $longitude
+   */
+  public function setupCommunity($builderCode, $name, $latitude, $longitude)
+  {
+    $site = Factory::createNewQueryObject(SiteQuery::class)->findOneByCode($builderCode);
+
+    $community = Factory::createNewObject(Community::class);
+    $community->setSiteId($site->getSiteId());
+    $community->setName($name);
+    $community->setLatitude($latitude);
+    $community->setLongitude($longitude);
+    $community->setSortOrder($this->communityPosition);
+    $community->save();
+
+    ++$this->communityPosition;
   }
 
   /**

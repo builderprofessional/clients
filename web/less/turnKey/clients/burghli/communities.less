@@ -1,0 +1,43 @@
+.communities-page {
+  .page-title-row {
+    h1 {
+      @media screen and (max-width: @screen-md-min) {
+        font-size: 1.8em;
+      }
+    }
+  }
+
+  .communities-container {
+    .container();
+
+    .communities-row {
+      .row();
+
+      .communities-list {
+        .make-xs-column(12);
+        .make-md-column(6);
+
+        ul {
+          list-style-type: none;
+
+          li {
+            .burghliLargeText();
+            color: @burghli-green;
+
+            .community-list-marker {
+              display: inline-block;
+              min-width: 25px;
+            }
+          }
+        }
+      }
+
+      .communities-map {
+        .make-xs-column(12);
+        .make-md-column-push(6);
+
+        float: right;
+      }
+    }
+  }
+}

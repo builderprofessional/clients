@@ -26,6 +26,10 @@ team_get:
   path: /team
   defaults: { _controller: ClientsTurnKeyBundle:Team:get }
 
+community_get:
+  path: /community
+  defaults: { _controller: ClientsTurnKeyBundle:Community:get }
+
 available_home_get:
   path: /availableHome
   defaults: { _controller: ClientsTurnKeyBundle:AvailableHome:get }

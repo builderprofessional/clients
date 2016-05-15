@@ -37,6 +37,22 @@ class SetupCommand extends EngineCommand
     $this->setupAvailableHomes($builderSetup);
     $this->setupTestimonials($builderSetup);
     $this->setupBuildProcess($builderSetup);
+    $this->setupCommunities($builderSetup);
+  }
+
+  protected function setupCommunities(Setup $builderSetup)
+  {
+    $builderSetup->setupCommunity('burghli', 'Fifth Ward', '29.77287086009354', '-95.32880902290344');
+    $builderSetup->setupCommunity('burghli', 'Towne Park Village', '29.86863341269248', '-95.29142439365387');
+    $builderSetup->setupCommunity('burghli', 'Galveston County', '29.287596650313482', '-94.83703995589167');
+    $builderSetup->setupCommunity('burghli', 'Acres Homes', '29.862678854483473', '-95.4275894165039');
+    $builderSetup->setupCommunity('burghli', 'Third Ward', '29.72898010501013', '-95.35658866167068');
+    $builderSetup->setupCommunity('burghli', 'Near Northside', '29.80084211351509', '-95.35240173339844');
+    $builderSetup->setupCommunity('burghli', 'Trinity Gardens', '29.831858339280018', '-95.31652450561523');
+    $builderSetup->setupCommunity('burghli', 'Magnolia', '30.12649554806559', '-95.78499913215637');
+    $builderSetup->setupCommunity('burghli', 'Sunnyside District', '29.67604721173953', '-95.3752326965332');
+    $builderSetup->setupCommunity('burghli', 'Santa Fe', '29.380978428336014', '-95.11894226074219');
+    $builderSetup->setupCommunity('burghli', 'Tomball', '30.09969248873229', '-95.62976628541946');
   }
 
   protected function setupBuildProcess(Setup $builderSetup)

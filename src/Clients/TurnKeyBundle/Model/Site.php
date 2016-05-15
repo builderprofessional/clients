@@ -43,6 +43,11 @@ class Site extends BaseSite
       $testimonial->delete();
     }
 
+    foreach ($this->getCommunities() as $community)
+    {
+      $community->delete();
+    }
+
     $client = $this->getClient();
     $company = $client->getCompany();
     $address = $company->getAddress();

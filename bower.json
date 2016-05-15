@@ -18,10 +18,12 @@
     "angular-ui-router": "0.2.10",
     "highcharts": "~4.0.3",
     "requirejs": "~2.1.13",
-    "ekko-lightbox": "^4.0.1"
+    "ekko-lightbox": "4.0.1",
+    "angular-google-maps": "2.3.3"
   },
   "devDependencies": {},
   "resolutions": {
     "angular": "~1.3.9"
   }
+
 }

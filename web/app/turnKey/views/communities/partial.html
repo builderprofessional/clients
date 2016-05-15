@@ -1,1 +1,18 @@
-<div>communities</div>
+<div class="communities-page">
+  <div class="page-title-row"><h1>Communities</h1></div>
+
+  <div class="communities-container">
+    <div class="communities-row">
+      <div class="communities-map">
+        this is a ma
+      </div>
+      <div class="communities-list">
+        <ul>
+          <li ng-repeat="community in communities">
+            <span class="community-list-marker">{{community.Marker}}.</span> {{community.Name}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
