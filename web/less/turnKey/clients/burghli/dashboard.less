@@ -1,0 +1,113 @@
+.dashboard-page {
+  margin-top: -15px;
+  @z-index-position: relative;
+
+  @media screen and (max-width: @screen-md-min) {
+    margin-top: -45px;
+  }
+
+  .dashboard-slider {
+    @slider-lg-width: 1140px;
+    @slider-lg-height: 350px;
+
+    @slider-md-width: 900px;
+    @slider-md-height: 250px;
+
+    @slider-xs-width: 400px;
+    @slider-xs-height: 140px;
+
+    position: @z-index-position;
+
+    width: @slider-lg-width;
+    height: @slider-lg-height;
+
+    .carousel-container {
+      width: @slider-lg-width;
+      height: @slider-lg-height;
+
+      img {
+        .solidImageFrame();
+        border-top: none;
+
+        position: @z-index-position;
+        z-index: 100;
+
+        width: @slider-lg-width;
+        height: @slider-lg-height;
+      }
+    }
+
+
+    @media screen and (max-width: @screen-lg-min) {
+      width: @slider-md-width;
+      height: @slider-md-height;
+
+      .carousel-container {
+        width: @slider-md-width;
+        height: @slider-md-height;
+
+        img {
+          width: @slider-md-width;
+          height: @slider-md-height;
+        }
+      }
+    }
+
+
+    @media screen and (max-width: @screen-md-min) {
+      width: @slider-xs-width;
+      height: @slider-xs-height;
+
+      .carousel-container {
+        width: @slider-xs-width;
+        height: @slider-xs-height;
+
+        img {
+          width: @slider-xs-width;
+          height: @slider-xs-height;
+        }
+      }
+    }
+  }
+
+  .dashboard-content {
+    .container();
+
+    .dashboard-content-row {
+      .row();
+
+      .dashboard-text {
+        .make-lg-column(9);
+        .make-md-column(6);
+        .make-xs-column(12);
+
+        h2 {
+          .burghliLargeText();
+
+          color: @burghli-green;
+          text-transform: uppercase;
+        }
+
+        p {
+          .burghliMediumText();
+        }
+      }
+
+      .sun-graphic {
+        .make-lg-column(3);
+        .make-md-column(6);
+        .make-xs-column(12);
+
+        @media screen and (min-width: @screen-lg-min) {
+          img {
+            position: @z-index-position;
+            z-index: 1;
+
+            float: right;
+            margin-top: -33px;
+          }
+        }
+      }
+    }
+  }
+}

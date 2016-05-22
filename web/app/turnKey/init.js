@@ -1,13 +1,17 @@
 // define our angular app that encompasses all of our pages and inject all
 // module dependencies
-turnKeyApp = angular.module('TurnKeyApp', ['engApp', 'engAuth', 'ngAnimate', 'engState', 'mgcrea.ngStrap', 'LocalStorageModule']);
+turnKeyApp = angular.module(
+  'TurnKeyApp',
+  ['engApp', 'engAuth', 'ngAnimate', 'engState', 'mgcrea.ngStrap', 'LocalStorageModule', 'HiggidyCarousel', 'uiGmapgoogle-maps']
+);
+
 engApp.constant('APP_CONFIG',{
   App: {
     Name: "BurghliHomes.com"
   }
 });
 //configure routing defaults
-turnKeyApp.config(function ($locationProvider, $urlRouterProvider, $httpProvider)
+turnKeyApp.config(function ($locationProvider, $urlRouterProvider, $httpProvider, uiGmapGoogleMapApiProvider)
 {
     $httpProvider.defaults.headers.common['Cache-Control'] = 'no-cache';
     $urlRouterProvider.otherwise('/dashboard');
@@ -15,8 +19,13 @@ turnKeyApp.config(function ($locationProvider, $urlRouterProvider, $httpProvider
     // this will allow us to communicate cross domain
     $httpProvider.defaults.useXDomain = true;
     $locationProvider.html5Mode(false);
-});
 
+  uiGmapGoogleMapApiProvider.configure({
+    v: '3.20',
+    key: 'AIzaSyClzj6TxW7idUntJGa1S38zNu2768J2MDI',
+    libraries: 'geometry, visualization'
+  });
+});
 
 //configure datepicker defaults
 turnKeyApp.config(function($datepickerProvider) {
@@ -26,6 +35,7 @@ turnKeyApp.config(function($datepickerProvider) {
     autoclose: true
   });
 });
+
 
 //configure modal/aside defaults
 turnKeyApp.config(function($asideProvider){

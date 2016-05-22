@@ -30,6 +30,10 @@ community_get:
   path: /community
   defaults: { _controller: ClientsTurnKeyBundle:Community:get }
 
+map_get:
+  path: /map
+  defaults: { _controller: ClientsTurnKeyBundle:Map:get }
+
 available_home_get:
   path: /availableHome
   defaults: { _controller: ClientsTurnKeyBundle:AvailableHome:get }

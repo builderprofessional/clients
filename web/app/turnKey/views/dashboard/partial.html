@@ -1,3 +1,36 @@
-<div>
-This is the dashboard
+<div class="dashboard-page">
+  <div class="dashboard-slider">
+    <div class="carousel-container" higgidy-carousel="images" timeout="3000">
+      <ul higgidy-carousel-images>
+        <li ng-repeat="image in images">
+          <img ng-src="{{image.src}}" alt="{{img.alt}}" />
+        </li>
+      </ul>
+
+      <nav class="links">
+        <ul>
+          <li ng-repeat="image in images">
+            <a href="" ng-click="show($index)" ng-class="{selected: carousel.current == $index}">
+              {{$index}}
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="dashboard-content">
+      <div class="dashboard-content-row">
+        <div class="dashboard-text">
+          <h2>Built Green ... Built to last ...</h2>
+          <p>Welcome to Burghli Homes! Our craftsmanship and commitment to homebuilding perfection
+          make Burghli Homes a trusted name to Houston homebuyers.</p>
+
+          <h2>Harness the power of the sun</h2>
+          <p><a ui-sref="solar">Click here to learn about Solar Powered Homes</a></p>
+        </div>
+        <div class="sun-graphic">
+          <img src="/images/burghli/solar_powered.png" />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

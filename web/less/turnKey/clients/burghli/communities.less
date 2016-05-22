@@ -15,7 +15,8 @@
 
       .communities-list {
         .make-xs-column(12);
-        .make-md-column(6);
+        .make-md-column(4);
+        .make-md-column-pull(8);
 
         ul {
           list-style-type: none;
@@ -34,9 +35,39 @@
 
       .communities-map {
         .make-xs-column(12);
-        .make-md-column-push(6);
+        .make-md-column(8);
+        .make-md-column-push(4);
 
-        float: right;
+        text-align: center;
+
+        @media screen and (max-width: @screen-md-min) {
+          height: 320px;
+        }
+
+        .gm-style {
+          .solidImageFrame();
+        }
+
+        .map-element {
+          height: 500px;
+          width: 500px;
+
+          margin-left: auto;
+          margin-right: auto;
+
+          .angular-google-map-container {
+            height: 500px;
+          }
+
+          @media screen and (max-width: @screen-md-min) {
+            height: 300px;
+            width: 300px;
+
+            .angular-google-map-container {
+              height: 300px;
+            }
+          }
+        }
       }
     }
   }

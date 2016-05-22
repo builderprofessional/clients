@@ -38,7 +38,7 @@ module.exports = function(grunt) {
         this.generateFiles();
       }
       for (var i=0; i<this._files.length; i++) {
-        if ( this._getHandle(this._files[i]).search(/FileAPI|^signup\/|signUpTemplate/) == -1)
+        if ( this._getHandle(this._files[i]).search(/FileAPI|^signup\/|signUpTemplate|\/test\/|\/backbone\/|\/lodash\/lib|\/lodash\/fp|\/lodash\/perf|\/lodash\/vendor/) == -1)
         {
           this._paths.push(this._getHandle(this._files[i]));
           this._pathMap[this._getHandle(this._files[i])] =
@@ -66,6 +66,9 @@ module.exports = function(grunt) {
         'vendor/angular-ui-router/angular-ui-router': ['vendor/angular/angular'],
         'vendor/angular-animate/angular-animate': ['vendor/angular/angular'],
         'vendor/angular-strap/angular-strap': ['vendor/angular/angular','vendor/bootstrap/bootstrap'],
+        'vendor/angular-simple-logger/angular-simple-logger': ['vendor/angular/angular','vendor/lodash/lodash'],
+        '//maps.googleapis.com/maps/api/js?sensor=false': ['//maps.googleapis.com/maps/api/js?sensor=false'],
+        'vendor/angular-google-maps/angular-google-maps': ['vendor/angular/angular','vendor/angular-simple-logger/angular-simple-logger'],
         'vendor/angular-strap/angular-strap.tpl': ['vendor/angular-strap/angular-strap'],
         'engine/engApp/init': [
           'vendor/angular/angular',
@@ -76,7 +79,7 @@ module.exports = function(grunt) {
           'vendor/angular-animate/angular-animate',
           'vendor/ng-file-upload/angular-file-upload',
           'vendor/angular-strap/angular-strap',
-          'vendor/angular-strap/angular-strap.tpl'
+          'vendor/angular-strap/angular-strap.tpl',
         ],
         'ngTemplateCache': [appName+'/init']
       };
@@ -88,6 +91,7 @@ module.exports = function(grunt) {
         'vendor/angular-ui-router/angular-ui-router',
         'vendor/angular-animate/angular-animate',
         'vendor/angular-strap/angular-strap',
+        'vendor/angular-google-maps/angular-google-maps',
         'engine/engApp/init'
       ];
       this._signupshim = {
@@ -248,6 +252,14 @@ module.exports = function(grunt) {
                   dest: 'dist/fonts'
                 }]
       },
+      externalJs: {
+        files: [{
+          expand: true,
+          cwd: 'web/external',
+          src: '**',
+          dest: 'dist/external'
+        }]
+      },
       lessSrc: {
         files: [{
           expand: true,
@@ -301,7 +313,8 @@ module.exports = function(grunt) {
         sub: true,
         laxcomma: true,
         laxbreak: true,
-        loopfunc: true
+        loopfunc: true,
+        expr: true
       }
     },
     less: {
@@ -366,7 +379,7 @@ module.exports = function(grunt) {
           optimize: 'none',
           out: 'dist/kernel.js',
           preserveLicenseComments: true,
-          generateSourceMaps: true   
+          generateSourceMaps: true
         }   
       },
       buildsignup: {

@@ -4,12 +4,18 @@
   <div class="communities-container">
     <div class="communities-row">
       <div class="communities-map">
-        this is a ma
+        <div class="map-element">
+          <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+            <ui-gmap-markers models="communities"
+              coords="'Coordinates'"
+              options="'MarkerOptions'"></ui-gmap-markers>
+          </ui-gmap-google-map>
+        </div>
       </div>
       <div class="communities-list">
         <ul>
           <li ng-repeat="community in communities">
-            <span class="community-list-marker">{{community.Marker}}.</span> {{community.Name}}
+            <span class="community-list-marker">{{community.MarkerOptions.label}}.</span> {{community.Name}}
           </li>
         </ul>
       </div>
